@@ -1,0 +1,1749 @@
+Sending build context to Docker daemon 3.584 kB
+Step 1 : FROM fedora:latest
+ ---> b0b140824a48
+Step 2 : ENV NAME docker-react-tic-tac-toe
+ ---> Using cache
+ ---> 210f4fb32f92
+Step 3 : LABEL maintainer "Irina Boverman <irina.boverman@gmail.com>" summary "Docker image for react-tic-tac-toe." name "irinabov/$NAME"
+ ---> Using cache
+ ---> c1b067239212
+Step 4 : COPY ./build.sh /
+ ---> 544b108b3cc5
+Removing intermediate container afc7e9472ad4
+Step 5 : RUN ./build.sh
+ ---> Running in eb865a4ea517
+[91m+ home=/
++ dnf -y update
+[0mFedora 26 - x86_64 - Updates                    4.3 MB/s |  16 MB     00:03    
+Fedora 26 - x86_64                              2.3 MB/s |  53 MB     00:22    
+Last metadata expiration check: 0:00:09 ago on Wed Nov  8 16:55:45 2017.
+Dependencies resolved.
+================================================================================
+ Package                       Arch      Version               Repository  Size
+================================================================================
+Upgrading:
+ audit-libs                    x86_64    2.8.1-1.fc26          updates    110 k
+ curl                          x86_64    7.53.1-12.fc26        updates    317 k
+ dbus                          x86_64    1:1.11.18-1.fc26      updates    257 k
+ dbus-libs                     x86_64    1:1.11.18-1.fc26      updates    175 k
+ dnf                           noarch    2.7.5-1.fc26          updates    349 k
+ dnf-conf                      noarch    2.7.5-1.fc26          updates     68 k
+ dnf-yum                       noarch    2.7.5-1.fc26          updates     49 k
+ emacs-filesystem              noarch    1:25.3-3.fc26         updates     67 k
+ gawk                          x86_64    4.1.4-5.fc26          updates    1.1 M
+ glibc                         x86_64    2.25-12.fc26          updates    3.4 M
+ glibc-common                  x86_64    2.25-12.fc26          updates    890 k
+ glibc-langpack-en             x86_64    2.25-12.fc26          updates    291 k
+ gnupg2                        x86_64    2.2.1-1.fc26          updates    2.2 M
+ gnupg2-smime                  x86_64    2.2.1-1.fc26          updates    273 k
+ gnutls                        x86_64    3.5.16-1.fc26         updates    756 k
+ libblkid                      x86_64    2.30.2-1.fc26         updates    194 k
+ libcrypt-nss                  x86_64    2.25-12.fc26          updates     54 k
+ libcurl                       x86_64    7.53.1-12.fc26        updates    272 k
+ libdnf                        x86_64    0.11.1-1.fc26         updates    128 k
+ libfdisk                      x86_64    2.30.2-1.fc26         updates    241 k
+ libgcc                        x86_64    7.2.1-2.fc26          updates     90 k
+ libgcrypt                     x86_64    1.7.9-1.fc26          updates    435 k
+ libmount                      x86_64    2.30.2-1.fc26         updates    216 k
+ libreport-filesystem          x86_64    2.9.1-3.fc26          updates     51 k
+ libsmartcols                  x86_64    2.30.2-1.fc26         updates    158 k
+ libsolv                       x86_64    0.6.30-1.fc26         updates    365 k
+ libssh2                       x86_64    1.8.0-5.fc26          updates     94 k
+ libsss_idmap                  x86_64    1.15.3-5.fc26         updates     85 k
+ libsss_nss_idmap              x86_64    1.15.3-5.fc26         updates     83 k
+ libuuid                       x86_64    2.30.2-1.fc26         updates     81 k
+ nspr                          x86_64    4.17.0-1.fc26         updates    137 k
+ nss                           x86_64    3.33.0-1.0.fc26       updates    855 k
+ nss-softokn                   x86_64    3.33.0-1.1.fc26       updates    388 k
+ nss-softokn-freebl            x86_64    3.33.0-1.1.fc26       updates    233 k
+ nss-sysinit                   x86_64    3.33.0-1.0.fc26       updates     62 k
+ nss-tools                     x86_64    3.33.0-1.0.fc26       updates    504 k
+ nss-util                      x86_64    3.33.0-1.0.fc26       updates     87 k
+ p11-kit                       x86_64    0.23.9-2.fc26         updates    261 k
+ p11-kit-trust                 x86_64    0.23.9-2.fc26         updates    132 k
+ popt                          x86_64    1.16-12.fc26          updates     58 k
+ python3                       x86_64    3.6.2-8.fc26          updates     64 k
+ python3-dnf                   noarch    2.7.5-1.fc26          updates    456 k
+ python3-hawkey                x86_64    0.11.1-1.fc26         updates     54 k
+ python3-libs                  x86_64    3.6.2-8.fc26          updates    1.4 M
+ python3-rpm                   x86_64    4.13.0.2-1.fc26       updates    107 k
+ rpm                           x86_64    4.13.0.2-1.fc26       updates    518 k
+ rpm-build-libs                x86_64    4.13.0.2-1.fc26       updates    122 k
+ rpm-libs                      x86_64    4.13.0.2-1.fc26       updates    306 k
+ rpm-plugin-selinux            x86_64    4.13.0.2-1.fc26       updates     58 k
+ rpm-plugin-systemd-inhibit    x86_64    4.13.0.2-1.fc26       updates     58 k
+ sssd-client                   x86_64    1.15.3-5.fc26         updates    135 k
+ system-python                 x86_64    3.6.2-8.fc26          updates     56 k
+ system-python-libs            x86_64    3.6.2-8.fc26          updates    6.3 M
+ systemd                       x86_64    233-7.fc26            updates    3.0 M
+ systemd-libs                  x86_64    233-7.fc26            updates    454 k
+ systemd-pam                   x86_64    233-7.fc26            updates    176 k
+ util-linux                    x86_64    2.30.2-1.fc26         updates    2.4 M
+ vim-minimal                   x86_64    2:8.0.1187-1.fc26     updates    530 k
+ xkeyboard-config              noarch    2.21-3.fc26           updates    799 k
+
+Transaction Summary
+================================================================================
+Upgrade  59 Packages
+
+Total download size: 32 M
+Downloading Packages:
+(1/59): audit-libs-2.8.1-1.fc26.x86_64.rpm       12 kB/s | 110 kB     00:09    
+(2/59): libcurl-7.53.1-12.fc26.x86_64.rpm        27 kB/s | 272 kB     00:10    
+(3/59): curl-7.53.1-12.fc26.x86_64.rpm           31 kB/s | 317 kB     00:10    
+(4/59): dbus-libs-1.11.18-1.fc26.x86_64.rpm      37 kB/s | 175 kB     00:04    
+(5/59): dnf-2.7.5-1.fc26.noarch.rpm              75 kB/s | 349 kB     00:04    
+(6/59): dbus-1.11.18-1.fc26.x86_64.rpm           39 kB/s | 257 kB     00:06    
+(7/59): dnf-conf-2.7.5-1.fc26.noarch.rpm         21 kB/s |  68 kB     00:03    
+(8/59): python3-dnf-2.7.5-1.fc26.noarch.rpm      91 kB/s | 456 kB     00:05    
+(9/59): python3-hawkey-0.11.1-1.fc26.x86_64.rpm  11 kB/s |  54 kB     00:05    
+(10/59): dnf-yum-2.7.5-1.fc26.noarch.rpm        8.8 kB/s |  49 kB     00:05    
+(11/59): libdnf-0.11.1-1.fc26.x86_64.rpm         15 kB/s | 128 kB     00:08    
+(12/59): emacs-filesystem-25.3-3.fc26.noarch.rp 7.5 kB/s |  67 kB     00:08    
+(13/59): gawk-4.1.4-5.fc26.x86_64.rpm            80 kB/s | 1.1 MB     00:13    
+(14/59): glibc-common-2.25-12.fc26.x86_64.rpm    74 kB/s | 890 kB     00:11    
+(15/59): glibc-langpack-en-2.25-12.fc26.x86_64.  31 kB/s | 291 kB     00:09    
+(16/59): glibc-2.25-12.fc26.x86_64.rpm          166 kB/s | 3.4 MB     00:21    
+(17/59): libcrypt-nss-2.25-12.fc26.x86_64.rpm   7.1 kB/s |  54 kB     00:07    
+(18/59): gnupg2-smime-2.2.1-1.fc26.x86_64.rpm    29 kB/s | 273 kB     00:09    
+(19/59): gnutls-3.5.16-1.fc26.x86_64.rpm         73 kB/s | 756 kB     00:10    
+(20/59): gnupg2-2.2.1-1.fc26.x86_64.rpm         160 kB/s | 2.2 MB     00:14    
+(21/59): libuuid-2.30.2-1.fc26.x86_64.rpm        11 kB/s |  81 kB     00:07    
+(22/59): libblkid-2.30.2-1.fc26.x86_64.rpm       20 kB/s | 194 kB     00:09    
+(23/59): util-linux-2.30.2-1.fc26.x86_64.rpm    156 kB/s | 2.4 MB     00:15    
+(24/59): libmount-2.30.2-1.fc26.x86_64.rpm       24 kB/s | 216 kB     00:09    
+(25/59): libfdisk-2.30.2-1.fc26.x86_64.rpm       24 kB/s | 241 kB     00:10    
+(26/59): libsmartcols-2.30.2-1.fc26.x86_64.rpm   20 kB/s | 158 kB     00:07    
+(27/59): libgcc-7.2.1-2.fc26.x86_64.rpm         9.7 kB/s |  90 kB     00:09    
+(28/59): libgcrypt-1.7.9-1.fc26.x86_64.rpm       42 kB/s | 435 kB     00:10    
+(29/59): libreport-filesystem-2.9.1-3.fc26.x86_ 5.2 kB/s |  51 kB     00:09    
+(30/59): libsolv-0.6.30-1.fc26.x86_64.rpm        32 kB/s | 365 kB     00:11    
+(31/59): libssh2-1.8.0-5.fc26.x86_64.rpm         11 kB/s |  94 kB     00:08    
+(32/59): libsss_idmap-1.15.3-5.fc26.x86_64.rpm  8.6 kB/s |  85 kB     00:09    
+(33/59): libsss_nss_idmap-1.15.3-5.fc26.x86_64. 9.2 kB/s |  83 kB     00:08    
+(34/59): nspr-4.17.0-1.fc26.x86_64.rpm           14 kB/s | 137 kB     00:09    
+(35/59): nss-util-3.33.0-1.0.fc26.x86_64.rpm     10 kB/s |  87 kB     00:08    
+(36/59): nss-softokn-3.33.0-1.1.fc26.x86_64.rpm  37 kB/s | 388 kB     00:10    
+(37/59): nss-3.33.0-1.0.fc26.x86_64.rpm          67 kB/s | 855 kB     00:12    
+(38/59): nss-tools-3.33.0-1.0.fc26.x86_64.rpm    85 kB/s | 504 kB     00:05    
+(39/59): nss-softokn-freebl-3.33.0-1.1.fc26.x86  24 kB/s | 233 kB     00:09    
+(40/59): nss-sysinit-3.33.0-1.0.fc26.x86_64.rpm 6.2 kB/s |  62 kB     00:09    
+(41/59): p11-kit-0.23.9-2.fc26.x86_64.rpm        43 kB/s | 261 kB     00:06    
+(42/59): popt-1.16-12.fc26.x86_64.rpm           7.8 kB/s |  58 kB     00:07    
+(43/59): p11-kit-trust-0.23.9-2.fc26.x86_64.rpm  13 kB/s | 132 kB     00:09    
+(44/59): python3-3.6.2-8.fc26.x86_64.rpm        7.4 kB/s |  64 kB     00:08    
+(45/59): system-python-3.6.2-8.fc26.x86_64.rpm  6.8 kB/s |  56 kB     00:08    
+(46/59): python3-libs-3.6.2-8.fc26.x86_64.rpm   101 kB/s | 1.4 MB     00:14    
+(47/59): system-python-libs-3.6.2-8.fc26.x86_64 347 kB/s | 6.3 MB     00:18    
+(48/59): python3-rpm-4.13.0.2-1.fc26.x86_64.rpm  12 kB/s | 107 kB     00:09    
+(49/59): rpm-libs-4.13.0.2-1.fc26.x86_64.rpm     45 kB/s | 306 kB     00:06    
+(50/59): rpm-plugin-selinux-4.13.0.2-1.fc26.x86  98 kB/s |  58 kB     00:00    
+(51/59): rpm-build-libs-4.13.0.2-1.fc26.x86_64. 233 kB/s | 122 kB     00:00    
+(52/59): rpm-4.13.0.2-1.fc26.x86_64.rpm         195 kB/s | 518 kB     00:02    
+(53/59): sssd-client-1.15.3-5.fc26.x86_64.rpm    61 kB/s | 135 kB     00:02    
+(54/59): rpm-plugin-systemd-inhibit-4.13.0.2-1.  13 kB/s |  58 kB     00:04    
+(55/59): systemd-pam-233-7.fc26.x86_64.rpm       31 kB/s | 176 kB     00:05    
+(56/59): systemd-233-7.fc26.x86_64.rpm          376 kB/s | 3.0 MB     00:08    
+(57/59): systemd-libs-233-7.fc26.x86_64.rpm      50 kB/s | 454 kB     00:09    
+(58/59): xkeyboard-config-2.21-3.fc26.noarch.rp 162 kB/s | 799 kB     00:04    
+(59/59): vim-minimal-8.0.1187-1.fc26.x86_64.rpm  76 kB/s | 530 kB     00:06    
+--------------------------------------------------------------------------------
+Total                                           193 kB/s |  32 MB     02:51     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: systemd                                                1/1 
+  Preparing        :                                                        1/1 
+  Upgrading        : glibc-common-2.25-12.fc26.x86_64                     1/118 
+  Upgrading        : glibc-langpack-en-2.25-12.fc26.x86_64                2/118 
+  Running scriptlet: glibc-2.25-12.fc26.x86_64                            3/118 
+  Upgrading        : glibc-2.25-12.fc26.x86_64                            3/118 
+  Running scriptlet: glibc-2.25-12.fc26.x86_64                            3/118 
+  Upgrading        : nspr-4.17.0-1.fc26.x86_64                            4/118 
+  Running scriptlet: nspr-4.17.0-1.fc26.x86_64                            4/118 
+  Upgrading        : nss-util-3.33.0-1.0.fc26.x86_64                      5/118 
+  Running scriptlet: nss-util-3.33.0-1.0.fc26.x86_64                      5/118 
+  Upgrading        : libgcrypt-1.7.9-1.fc26.x86_64                        6/118 
+  Running scriptlet: libgcrypt-1.7.9-1.fc26.x86_64                        6/118 
+  Upgrading        : popt-1.16-12.fc26.x86_64                             7/118 
+  Running scriptlet: popt-1.16-12.fc26.x86_64                             7/118 
+  Upgrading        : libgcc-7.2.1-2.fc26.x86_64                           8/118 
+  Running scriptlet: libgcc-7.2.1-2.fc26.x86_64                           8/118 
+  Upgrading        : systemd-libs-233-7.fc26.x86_64                       9/118 
+  Running scriptlet: systemd-libs-233-7.fc26.x86_64                       9/118 
+  Upgrading        : libuuid-2.30.2-1.fc26.x86_64                        10/118 
+  Running scriptlet: libuuid-2.30.2-1.fc26.x86_64                        10/118 
+  Upgrading        : libblkid-2.30.2-1.fc26.x86_64                       11/118 
+  Running scriptlet: libblkid-2.30.2-1.fc26.x86_64                       11/118 
+  Upgrading        : audit-libs-2.8.1-1.fc26.x86_64                      12/118 
+  Running scriptlet: audit-libs-2.8.1-1.fc26.x86_64                      12/118 
+  Upgrading        : libmount-2.30.2-1.fc26.x86_64                       13/118 
+  Running scriptlet: libmount-2.30.2-1.fc26.x86_64                       13/118 
+  Upgrading        : dbus-libs-1:1.11.18-1.fc26.x86_64                   14/118 
+  Running scriptlet: dbus-libs-1:1.11.18-1.fc26.x86_64                   14/118 
+  Upgrading        : nss-softokn-freebl-3.33.0-1.1.fc26.x86_64           15/118 
+  Upgrading        : libcrypt-nss-2.25-12.fc26.x86_64                    16/118 
+  Running scriptlet: libcrypt-nss-2.25-12.fc26.x86_64                    16/118 
+  Upgrading        : system-python-libs-3.6.2-8.fc26.x86_64              17/118 
+  Running scriptlet: system-python-libs-3.6.2-8.fc26.x86_64              17/118 
+  Upgrading        : system-python-3.6.2-8.fc26.x86_64                   18/118 
+  Upgrading        : nss-softokn-3.33.0-1.1.fc26.x86_64                  19/118 
+  Running scriptlet: nss-softokn-3.33.0-1.1.fc26.x86_64                  19/118 
+  Upgrading        : nss-3.33.0-1.0.fc26.x86_64                          20/118 
+  Running scriptlet: nss-3.33.0-1.0.fc26.x86_64                          20/118 
+  Upgrading        : nss-sysinit-3.33.0-1.0.fc26.x86_64                  21/118 
+  Upgrading        : p11-kit-0.23.9-2.fc26.x86_64                        22/118 
+  Running scriptlet: p11-kit-0.23.9-2.fc26.x86_64                        22/118 
+  Upgrading        : p11-kit-trust-0.23.9-2.fc26.x86_64                  23/118 
+  Running scriptlet: p11-kit-trust-0.23.9-2.fc26.x86_64                  23/118 
+  Upgrading        : gnutls-3.5.16-1.fc26.x86_64                         24/118 
+  Running scriptlet: gnutls-3.5.16-1.fc26.x86_64                         24/118 
+  Upgrading        : gnupg2-2.2.1-1.fc26.x86_64                          25/118 
+  Running scriptlet: gnupg2-2.2.1-1.fc26.x86_64                          25/118 
+install-info: No such file or directory for /usr/share/info/gnupg.info
+  Upgrading        : python3-libs-3.6.2-8.fc26.x86_64                    26/118 
+  Running scriptlet: python3-libs-3.6.2-8.fc26.x86_64                    26/118 
+  Upgrading        : libfdisk-2.30.2-1.fc26.x86_64                       27/118 
+  Running scriptlet: libfdisk-2.30.2-1.fc26.x86_64                       27/118 
+  Upgrading        : libsmartcols-2.30.2-1.fc26.x86_64                   28/118 
+  Running scriptlet: libsmartcols-2.30.2-1.fc26.x86_64                   28/118 
+  Upgrading        : util-linux-2.30.2-1.fc26.x86_64                     29/118 
+  Running scriptlet: util-linux-2.30.2-1.fc26.x86_64                     29/118 
+  Upgrading        : systemd-pam-233-7.fc26.x86_64                       30/118 
+  Running scriptlet: systemd-233-7.fc26.x86_64                           31/118 
+  Upgrading        : systemd-233-7.fc26.x86_64                           31/118 
+  Running scriptlet: systemd-233-7.fc26.x86_64                           31/118 
+  Running scriptlet: dbus-1:1.11.18-1.fc26.x86_64                        32/118 
+  Upgrading        : dbus-1:1.11.18-1.fc26.x86_64                        32/118 
+  Running scriptlet: dbus-1:1.11.18-1.fc26.x86_64                        32/118 
+  Upgrading        : libssh2-1.8.0-5.fc26.x86_64                         33/118 
+  Running scriptlet: libssh2-1.8.0-5.fc26.x86_64                         33/118 
+  Upgrading        : libcurl-7.53.1-12.fc26.x86_64                       34/118 
+  Running scriptlet: libcurl-7.53.1-12.fc26.x86_64                       34/118 
+  Upgrading        : curl-7.53.1-12.fc26.x86_64                          35/118 
+  Upgrading        : rpm-plugin-selinux-4.13.0.2-1.fc26.x86_64           36/118 
+  Upgrading        : rpm-libs-4.13.0.2-1.fc26.x86_64                     37/118 
+  Running scriptlet: rpm-libs-4.13.0.2-1.fc26.x86_64                     37/118 
+  Upgrading        : rpm-4.13.0.2-1.fc26.x86_64                          38/118 
+  Upgrading        : libsolv-0.6.30-1.fc26.x86_64                        39/118 
+  Running scriptlet: libsolv-0.6.30-1.fc26.x86_64                        39/118 
+  Upgrading        : libdnf-0.11.1-1.fc26.x86_64                         40/118 
+  Running scriptlet: libdnf-0.11.1-1.fc26.x86_64                         40/118 
+  Upgrading        : python3-hawkey-0.11.1-1.fc26.x86_64                 41/118 
+  Upgrading        : rpm-build-libs-4.13.0.2-1.fc26.x86_64               42/118 
+  Running scriptlet: rpm-build-libs-4.13.0.2-1.fc26.x86_64               42/118 
+  Upgrading        : python3-rpm-4.13.0.2-1.fc26.x86_64                  43/118 
+  Upgrading        : libsss_idmap-1.15.3-5.fc26.x86_64                   44/118 
+  Running scriptlet: libsss_idmap-1.15.3-5.fc26.x86_64                   44/118 
+  Upgrading        : libsss_nss_idmap-1.15.3-5.fc26.x86_64               45/118 
+  Running scriptlet: libsss_nss_idmap-1.15.3-5.fc26.x86_64               45/118 
+  Upgrading        : libreport-filesystem-2.9.1-3.fc26.x86_64            46/118 
+  Upgrading        : dnf-conf-2.7.5-1.fc26.noarch                        47/118 
+  Upgrading        : python3-dnf-2.7.5-1.fc26.noarch                     48/118 
+  Upgrading        : dnf-2.7.5-1.fc26.noarch                             49/118 
+  Running scriptlet: dnf-2.7.5-1.fc26.noarch                             49/118 
+  Upgrading        : dnf-yum-2.7.5-1.fc26.noarch                         50/118 
+  Upgrading        : sssd-client-1.15.3-5.fc26.x86_64                    51/118 
+  Running scriptlet: sssd-client-1.15.3-5.fc26.x86_64                    51/118 
+  Upgrading        : rpm-plugin-systemd-inhibit-4.13.0.2-1.fc26.x86_6    52/118 
+  Upgrading        : python3-3.6.2-8.fc26.x86_64                         53/118 
+  Running scriptlet: python3-3.6.2-8.fc26.x86_64                         53/118 
+  Upgrading        : gnupg2-smime-2.2.1-1.fc26.x86_64                    54/118 
+  Upgrading        : nss-tools-3.33.0-1.0.fc26.x86_64                    55/118 
+  Upgrading        : gawk-4.1.4-5.fc26.x86_64                            56/118 
+  Running scriptlet: gawk-4.1.4-5.fc26.x86_64                            56/118 
+install-info: No such file or directory for /usr/share/info/gawk.info
+  Upgrading        : vim-minimal-2:8.0.1187-1.fc26.x86_64                57/118 
+  Upgrading        : xkeyboard-config-2.21-3.fc26.noarch                 58/118 
+  Upgrading        : emacs-filesystem-1:25.3-3.fc26.noarch               59/118 
+  Cleanup          : dnf-yum-2.6.3-1.fc26.noarch                         60/118 
+  Running scriptlet: dnf-2.6.3-1.fc26.noarch                             61/118 
+  Cleanup          : dnf-2.6.3-1.fc26.noarch                             61/118 
+  Running scriptlet: dnf-2.6.3-1.fc26.noarch                             61/118[91mFailed to connect to bus: No such file or directory
+[0m 
+  Cleanup          : python3-dnf-2.6.3-1.fc26.noarch                     62/118 
+  Cleanup          : dnf-conf-2.6.3-1.fc26.noarch                        63/118 
+  Cleanup          : libreport-filesystem-2.9.1-2.fc26.x86_64            64/118 
+  Cleanup          : xkeyboard-config-2.21-1.fc26.noarch                 65/118 
+  Cleanup          : emacs-filesystem-1:25.2-3.fc26.noarch               66/118 
+  Cleanup          : systemd-pam-233-6.fc26.x86_64                       67/118 
+  Running scriptlet: dbus-1:1.11.16-1.fc26.x86_64                        68/118 
+  Cleanup          : dbus-1:1.11.16-1.fc26.x86_64                        68/118 
+  Running scriptlet: dbus-1:1.11.16-1.fc26.x86_64                        68/118 
+  Running scriptlet: systemd-233-6.fc26.x86_64                           69/118 
+  Cleanup          : systemd-233-6.fc26.x86_64                           69/118 
+  Running scriptlet: systemd-233-6.fc26.x86_64                           69/118 
+  Cleanup          : util-linux-2.30.1-1.fc26.x86_64                     70/118 
+  Running scriptlet: util-linux-2.30.1-1.fc26.x86_64                     70/118 
+  Cleanup          : nss-tools-3.32.0-1.1.fc26.x86_64                    71/118 
+  Cleanup          : python3-rpm-4.13.0.1-7.fc26.x86_64                  72/118 
+  Cleanup          : rpm-build-libs-4.13.0.1-7.fc26.x86_64               73/118 
+  Running scriptlet: rpm-build-libs-4.13.0.1-7.fc26.x86_64               73/118 
+  Cleanup          : rpm-plugin-systemd-inhibit-4.13.0.1-7.fc26.x86_6    74/118 
+  Cleanup          : python3-hawkey-0.9.3-1.fc26.x86_64                  75/118 
+  Cleanup          : libdnf-0.9.3-1.fc26.x86_64                          76/118 
+  Running scriptlet: libdnf-0.9.3-1.fc26.x86_64                          76/118 
+  Cleanup          : libfdisk-2.30.1-1.fc26.x86_64                       77/118 
+  Running scriptlet: libfdisk-2.30.1-1.fc26.x86_64                       77/118 
+  Cleanup          : libmount-2.30.1-1.fc26.x86_64                       78/118 
+  Running scriptlet: libmount-2.30.1-1.fc26.x86_64                       78/118 
+  Cleanup          : python3-3.6.2-5.fc26.x86_64                         79/118 
+  Running scriptlet: python3-3.6.2-5.fc26.x86_64                         79/118 
+  Cleanup          : system-python-3.6.2-5.fc26.x86_64                   80/118 
+  Running scriptlet: sssd-client-1.15.3-3.fc26.x86_64                    81/118 
+  Cleanup          : sssd-client-1.15.3-3.fc26.x86_64                    81/118 
+  Running scriptlet: sssd-client-1.15.3-3.fc26.x86_64                    81/118 
+  Cleanup          : gnupg2-smime-2.2.0-1.fc26.x86_64                    82/118 
+  Running scriptlet: gnupg2-2.2.0-1.fc26.x86_64                          83/118 
+  Cleanup          : gnupg2-2.2.0-1.fc26.x86_64                          83/118 
+  Cleanup          : gnutls-3.5.15-1.fc26.x86_64                         84/118 
+  Running scriptlet: gnutls-3.5.15-1.fc26.x86_64                         84/118 
+  Cleanup          : p11-kit-trust-0.23.8-1.fc26.x86_64                  85/118 
+  Running scriptlet: p11-kit-trust-0.23.8-1.fc26.x86_64                  85/118 
+  Cleanup          : libblkid-2.30.1-1.fc26.x86_64                       86/118 
+  Running scriptlet: libblkid-2.30.1-1.fc26.x86_64                       86/118 
+  Cleanup          : libsolv-0.6.29-1.fc26.x86_64                        87/118 
+  Running scriptlet: libsolv-0.6.29-1.fc26.x86_64                        87/118 
+  Cleanup          : rpm-4.13.0.1-7.fc26.x86_64                          88/118 
+  Cleanup          : rpm-plugin-selinux-4.13.0.1-7.fc26.x86_64           89/118 
+  Cleanup          : rpm-libs-4.13.0.1-7.fc26.x86_64                     90/118 
+  Running scriptlet: rpm-libs-4.13.0.1-7.fc26.x86_64                     90/118 
+  Cleanup          : curl-7.53.1-10.fc26.x86_64                          91/118 
+  Cleanup          : libcurl-7.53.1-10.fc26.x86_64                       92/118 
+  Running scriptlet: libcurl-7.53.1-10.fc26.x86_64                       92/118 
+  Cleanup          : nss-sysinit-3.32.0-1.1.fc26.x86_64                  93/118 
+  Cleanup          : nss-3.32.0-1.1.fc26.x86_64                          94/118 
+  Running scriptlet: nss-3.32.0-1.1.fc26.x86_64                          94/118 
+  Cleanup          : nss-softokn-3.32.0-1.2.fc26.x86_64                  95/118 
+  Running scriptlet: nss-softokn-3.32.0-1.2.fc26.x86_64                  95/118 
+  Cleanup          : nss-util-3.32.0-1.0.fc26.x86_64                     96/118 
+  Running scriptlet: nss-util-3.32.0-1.0.fc26.x86_64                     96/118 
+  Cleanup          : dbus-libs-1:1.11.16-1.fc26.x86_64                   97/118 
+  Running scriptlet: dbus-libs-1:1.11.16-1.fc26.x86_64                   97/118 
+  Cleanup          : python3-libs-3.6.2-5.fc26.x86_64                    98/118 
+  Running scriptlet: python3-libs-3.6.2-5.fc26.x86_64                    98/118 
+  Cleanup          : systemd-libs-233-6.fc26.x86_64                      99/118 
+  Running scriptlet: systemd-libs-233-6.fc26.x86_64                      99/118 
+  Cleanup          : system-python-libs-3.6.2-5.fc26.x86_64             100/118 
+  Running scriptlet: system-python-libs-3.6.2-5.fc26.x86_64             100/118 
+  Cleanup          : libcrypt-nss-2.25-10.fc26.x86_64                   101/118 
+  Running scriptlet: libcrypt-nss-2.25-10.fc26.x86_64                   101/118 
+  Cleanup          : nss-softokn-freebl-3.32.0-1.2.fc26.x86_64          102/118 
+  Cleanup          : libgcrypt-1.7.8-1.fc26.x86_64                      103/118 
+  Running scriptlet: libgcrypt-1.7.8-1.fc26.x86_64                      103/118 
+  Cleanup          : nspr-4.16.0-1.fc26.x86_64                          104/118 
+  Running scriptlet: nspr-4.16.0-1.fc26.x86_64                          104/118 
+  Cleanup          : libssh2-1.8.0-2.fc26.x86_64                        105/118 
+  Running scriptlet: libssh2-1.8.0-2.fc26.x86_64                        105/118 
+  Cleanup          : popt-1.16-8.fc26.x86_64                            106/118 
+  Running scriptlet: popt-1.16-8.fc26.x86_64                            106/118 
+  Cleanup          : libuuid-2.30.1-1.fc26.x86_64                       107/118 
+  Running scriptlet: libuuid-2.30.1-1.fc26.x86_64                       107/118 
+  Cleanup          : p11-kit-0.23.8-1.fc26.x86_64                       108/118 
+  Running scriptlet: p11-kit-0.23.8-1.fc26.x86_64                       108/118 
+  Cleanup          : libsss_idmap-1.15.3-3.fc26.x86_64                  109/118 
+  Running scriptlet: libsss_idmap-1.15.3-3.fc26.x86_64                  109/118 
+  Cleanup          : libsss_nss_idmap-1.15.3-3.fc26.x86_64              110/118 
+  Running scriptlet: libsss_nss_idmap-1.15.3-3.fc26.x86_64              110/118 
+  Cleanup          : audit-libs-2.7.7-1.fc26.x86_64                     111/118 
+  Running scriptlet: audit-libs-2.7.7-1.fc26.x86_64                     111/118 
+  Cleanup          : libsmartcols-2.30.1-1.fc26.x86_64                  112/118 
+  Running scriptlet: libsmartcols-2.30.1-1.fc26.x86_64                  112/118 
+  Cleanup          : vim-minimal-2:8.0.1030-1.fc26.x86_64               113/118 
+  Running scriptlet: gawk-4.1.4-3.fc26.x86_64                           114/118 
+  Cleanup          : gawk-4.1.4-3.fc26.x86_64                           114/118 
+  Cleanup          : glibc-common-2.25-10.fc26.x86_64                   115/118 
+  Cleanup          : glibc-langpack-en-2.25-10.fc26.x86_64              116/118 
+  Cleanup          : glibc-2.25-10.fc26.x86_64                          117/118 
+  Running scriptlet: glibc-2.25-10.fc26.x86_64                          117/118 
+  Cleanup          : libgcc-7.1.1-3.fc26.x86_64                         118/118 
+  Running scriptlet: libgcc-7.1.1-3.fc26.x86_64                         118/118 
+  Running scriptlet: rpm-4.13.0.2-1.fc26.x86_64                         118/118 
+  Running scriptlet: python3-3.6.2-8.fc26.x86_64                        118/118 
+  Running scriptlet: systemd-233-7.fc26.x86_64                          118/118[91mFailed to connect to bus: No such file or directory
+[0m 
+  Verifying        : audit-libs-2.8.1-1.fc26.x86_64                       1/118 
+  Verifying        : curl-7.53.1-12.fc26.x86_64                           2/118 
+  Verifying        : libcurl-7.53.1-12.fc26.x86_64                        3/118 
+  Verifying        : dbus-1:1.11.18-1.fc26.x86_64                         4/118 
+  Verifying        : dbus-libs-1:1.11.18-1.fc26.x86_64                    5/118 
+  Verifying        : dnf-2.7.5-1.fc26.noarch                              6/118 
+  Verifying        : python3-dnf-2.7.5-1.fc26.noarch                      7/118 
+  Verifying        : dnf-conf-2.7.5-1.fc26.noarch                         8/118 
+  Verifying        : python3-hawkey-0.11.1-1.fc26.x86_64                  9/118 
+  Verifying        : dnf-yum-2.7.5-1.fc26.noarch                         10/118 
+  Verifying        : libdnf-0.11.1-1.fc26.x86_64                         11/118 
+  Verifying        : emacs-filesystem-1:25.3-3.fc26.noarch               12/118 
+  Verifying        : gawk-4.1.4-5.fc26.x86_64                            13/118 
+  Verifying        : glibc-2.25-12.fc26.x86_64                           14/118 
+  Verifying        : glibc-common-2.25-12.fc26.x86_64                    15/118 
+  Verifying        : glibc-langpack-en-2.25-12.fc26.x86_64               16/118 
+  Verifying        : libcrypt-nss-2.25-12.fc26.x86_64                    17/118 
+  Verifying        : gnupg2-2.2.1-1.fc26.x86_64                          18/118 
+  Verifying        : gnupg2-smime-2.2.1-1.fc26.x86_64                    19/118 
+  Verifying        : gnutls-3.5.16-1.fc26.x86_64                         20/118 
+  Verifying        : libblkid-2.30.2-1.fc26.x86_64                       21/118 
+  Verifying        : libuuid-2.30.2-1.fc26.x86_64                        22/118 
+  Verifying        : util-linux-2.30.2-1.fc26.x86_64                     23/118 
+  Verifying        : libmount-2.30.2-1.fc26.x86_64                       24/118 
+  Verifying        : libfdisk-2.30.2-1.fc26.x86_64                       25/118 
+  Verifying        : libsmartcols-2.30.2-1.fc26.x86_64                   26/118 
+  Verifying        : libgcc-7.2.1-2.fc26.x86_64                          27/118 
+  Verifying        : libgcrypt-1.7.9-1.fc26.x86_64                       28/118 
+  Verifying        : libreport-filesystem-2.9.1-3.fc26.x86_64            29/118 
+  Verifying        : libsolv-0.6.30-1.fc26.x86_64                        30/118 
+  Verifying        : libssh2-1.8.0-5.fc26.x86_64                         31/118 
+  Verifying        : libsss_idmap-1.15.3-5.fc26.x86_64                   32/118 
+  Verifying        : libsss_nss_idmap-1.15.3-5.fc26.x86_64               33/118 
+  Verifying        : nspr-4.17.0-1.fc26.x86_64                           34/118 
+  Verifying        : nss-3.33.0-1.0.fc26.x86_64                          35/118 
+  Verifying        : nss-softokn-3.33.0-1.1.fc26.x86_64                  36/118 
+  Verifying        : nss-util-3.33.0-1.0.fc26.x86_64                     37/118 
+  Verifying        : nss-softokn-freebl-3.33.0-1.1.fc26.x86_64           38/118 
+  Verifying        : nss-tools-3.33.0-1.0.fc26.x86_64                    39/118 
+  Verifying        : nss-sysinit-3.33.0-1.0.fc26.x86_64                  40/118 
+  Verifying        : p11-kit-0.23.9-2.fc26.x86_64                        41/118 
+  Verifying        : p11-kit-trust-0.23.9-2.fc26.x86_64                  42/118 
+  Verifying        : popt-1.16-12.fc26.x86_64                            43/118 
+  Verifying        : python3-3.6.2-8.fc26.x86_64                         44/118 
+  Verifying        : python3-libs-3.6.2-8.fc26.x86_64                    45/118 
+  Verifying        : system-python-libs-3.6.2-8.fc26.x86_64              46/118 
+  Verifying        : system-python-3.6.2-8.fc26.x86_64                   47/118 
+  Verifying        : python3-rpm-4.13.0.2-1.fc26.x86_64                  48/118 
+  Verifying        : rpm-libs-4.13.0.2-1.fc26.x86_64                     49/118 
+  Verifying        : rpm-4.13.0.2-1.fc26.x86_64                          50/118 
+  Verifying        : rpm-plugin-selinux-4.13.0.2-1.fc26.x86_64           51/118 
+  Verifying        : rpm-plugin-systemd-inhibit-4.13.0.2-1.fc26.x86_6    52/118 
+  Verifying        : rpm-build-libs-4.13.0.2-1.fc26.x86_64               53/118 
+  Verifying        : sssd-client-1.15.3-5.fc26.x86_64                    54/118 
+  Verifying        : systemd-233-7.fc26.x86_64                           55/118 
+  Verifying        : systemd-pam-233-7.fc26.x86_64                       56/118 
+  Verifying        : systemd-libs-233-7.fc26.x86_64                      57/118 
+  Verifying        : vim-minimal-2:8.0.1187-1.fc26.x86_64                58/118 
+  Verifying        : xkeyboard-config-2.21-3.fc26.noarch                 59/118 
+  Verifying        : popt-1.16-8.fc26.x86_64                             60/118 
+  Verifying        : python3-3.6.2-5.fc26.x86_64                         61/118 
+  Verifying        : audit-libs-2.7.7-1.fc26.x86_64                      62/118 
+  Verifying        : python3-dnf-2.6.3-1.fc26.noarch                     63/118 
+  Verifying        : python3-hawkey-0.9.3-1.fc26.x86_64                  64/118 
+  Verifying        : python3-libs-3.6.2-5.fc26.x86_64                    65/118 
+  Verifying        : python3-rpm-4.13.0.1-7.fc26.x86_64                  66/118 
+  Verifying        : curl-7.53.1-10.fc26.x86_64                          67/118 
+  Verifying        : dbus-1:1.11.16-1.fc26.x86_64                        68/118 
+  Verifying        : rpm-4.13.0.1-7.fc26.x86_64                          69/118 
+  Verifying        : dbus-libs-1:1.11.16-1.fc26.x86_64                   70/118 
+  Verifying        : rpm-libs-4.13.0.1-7.fc26.x86_64                     71/118 
+  Verifying        : rpm-plugin-selinux-4.13.0.1-7.fc26.x86_64           72/118 
+  Verifying        : rpm-plugin-systemd-inhibit-4.13.0.1-7.fc26.x86_6    73/118 
+  Verifying        : rpm-build-libs-4.13.0.1-7.fc26.x86_64               74/118 
+  Verifying        : dnf-2.6.3-1.fc26.noarch                             75/118 
+  Verifying        : dnf-conf-2.6.3-1.fc26.noarch                        76/118 
+  Verifying        : dnf-yum-2.6.3-1.fc26.noarch                         77/118 
+  Verifying        : sssd-client-1.15.3-3.fc26.x86_64                    78/118 
+  Verifying        : system-python-3.6.2-5.fc26.x86_64                   79/118 
+  Verifying        : emacs-filesystem-1:25.2-3.fc26.noarch               80/118 
+  Verifying        : system-python-libs-3.6.2-5.fc26.x86_64              81/118 
+  Verifying        : systemd-233-6.fc26.x86_64                           82/118 
+  Verifying        : systemd-pam-233-6.fc26.x86_64                       83/118 
+  Verifying        : systemd-libs-233-6.fc26.x86_64                      84/118 
+  Verifying        : gawk-4.1.4-3.fc26.x86_64                            85/118 
+  Verifying        : glibc-2.25-10.fc26.x86_64                           86/118 
+  Verifying        : glibc-common-2.25-10.fc26.x86_64                    87/118 
+  Verifying        : glibc-langpack-en-2.25-10.fc26.x86_64               88/118 
+  Verifying        : util-linux-2.30.1-1.fc26.x86_64                     89/118 
+  Verifying        : gnupg2-2.2.0-1.fc26.x86_64                          90/118 
+  Verifying        : gnupg2-smime-2.2.0-1.fc26.x86_64                    91/118 
+  Verifying        : gnutls-3.5.15-1.fc26.x86_64                         92/118 
+  Verifying        : vim-minimal-2:8.0.1030-1.fc26.x86_64                93/118 
+  Verifying        : xkeyboard-config-2.21-1.fc26.noarch                 94/118 
+  Verifying        : libblkid-2.30.1-1.fc26.x86_64                       95/118 
+  Verifying        : libcrypt-nss-2.25-10.fc26.x86_64                    96/118 
+  Verifying        : libcurl-7.53.1-10.fc26.x86_64                       97/118 
+  Verifying        : libdnf-0.9.3-1.fc26.x86_64                          98/118 
+  Verifying        : libfdisk-2.30.1-1.fc26.x86_64                       99/118 
+  Verifying        : libgcc-7.1.1-3.fc26.x86_64                         100/118 
+  Verifying        : libgcrypt-1.7.8-1.fc26.x86_64                      101/118 
+  Verifying        : libmount-2.30.1-1.fc26.x86_64                      102/118 
+  Verifying        : libreport-filesystem-2.9.1-2.fc26.x86_64           103/118 
+  Verifying        : libsmartcols-2.30.1-1.fc26.x86_64                  104/118 
+  Verifying        : libsolv-0.6.29-1.fc26.x86_64                       105/118 
+  Verifying        : libssh2-1.8.0-2.fc26.x86_64                        106/118 
+  Verifying        : libsss_idmap-1.15.3-3.fc26.x86_64                  107/118 
+  Verifying        : libsss_nss_idmap-1.15.3-3.fc26.x86_64              108/118 
+  Verifying        : libuuid-2.30.1-1.fc26.x86_64                       109/118 
+  Verifying        : nspr-4.16.0-1.fc26.x86_64                          110/118 
+  Verifying        : nss-3.32.0-1.1.fc26.x86_64                         111/118 
+  Verifying        : nss-softokn-3.32.0-1.2.fc26.x86_64                 112/118 
+  Verifying        : nss-softokn-freebl-3.32.0-1.2.fc26.x86_64          113/118 
+  Verifying        : nss-sysinit-3.32.0-1.1.fc26.x86_64                 114/118 
+  Verifying        : nss-tools-3.32.0-1.1.fc26.x86_64                   115/118 
+  Verifying        : nss-util-3.32.0-1.0.fc26.x86_64                    116/118 
+  Verifying        : p11-kit-0.23.8-1.fc26.x86_64                       117/118 
+  Verifying        : p11-kit-trust-0.23.8-1.fc26.x86_64                 118/118 
+
+Upgraded:
+  audit-libs.x86_64 2.8.1-1.fc26                                                
+  curl.x86_64 7.53.1-12.fc26                                                    
+  dbus.x86_64 1:1.11.18-1.fc26                                                  
+  dbus-libs.x86_64 1:1.11.18-1.fc26                                             
+  dnf.noarch 2.7.5-1.fc26                                                       
+  dnf-conf.noarch 2.7.5-1.fc26                                                  
+  dnf-yum.noarch 2.7.5-1.fc26                                                   
+  emacs-filesystem.noarch 1:25.3-3.fc26                                         
+  gawk.x86_64 4.1.4-5.fc26                                                      
+  glibc.x86_64 2.25-12.fc26                                                     
+  glibc-common.x86_64 2.25-12.fc26                                              
+  glibc-langpack-en.x86_64 2.25-12.fc26                                         
+  gnupg2.x86_64 2.2.1-1.fc26                                                    
+  gnupg2-smime.x86_64 2.2.1-1.fc26                                              
+  gnutls.x86_64 3.5.16-1.fc26                                                   
+  libblkid.x86_64 2.30.2-1.fc26                                                 
+  libcrypt-nss.x86_64 2.25-12.fc26                                              
+  libcurl.x86_64 7.53.1-12.fc26                                                 
+  libdnf.x86_64 0.11.1-1.fc26                                                   
+  libfdisk.x86_64 2.30.2-1.fc26                                                 
+  libgcc.x86_64 7.2.1-2.fc26                                                    
+  libgcrypt.x86_64 1.7.9-1.fc26                                                 
+  libmount.x86_64 2.30.2-1.fc26                                                 
+  libreport-filesystem.x86_64 2.9.1-3.fc26                                      
+  libsmartcols.x86_64 2.30.2-1.fc26                                             
+  libsolv.x86_64 0.6.30-1.fc26                                                  
+  libssh2.x86_64 1.8.0-5.fc26                                                   
+  libsss_idmap.x86_64 1.15.3-5.fc26                                             
+  libsss_nss_idmap.x86_64 1.15.3-5.fc26                                         
+  libuuid.x86_64 2.30.2-1.fc26                                                  
+  nspr.x86_64 4.17.0-1.fc26                                                     
+  nss.x86_64 3.33.0-1.0.fc26                                                    
+  nss-softokn.x86_64 3.33.0-1.1.fc26                                            
+  nss-softokn-freebl.x86_64 3.33.0-1.1.fc26                                     
+  nss-sysinit.x86_64 3.33.0-1.0.fc26                                            
+  nss-tools.x86_64 3.33.0-1.0.fc26                                              
+  nss-util.x86_64 3.33.0-1.0.fc26                                               
+  p11-kit.x86_64 0.23.9-2.fc26                                                  
+  p11-kit-trust.x86_64 0.23.9-2.fc26                                            
+  popt.x86_64 1.16-12.fc26                                                      
+  python3.x86_64 3.6.2-8.fc26                                                   
+  python3-dnf.noarch 2.7.5-1.fc26                                               
+  python3-hawkey.x86_64 0.11.1-1.fc26                                           
+  python3-libs.x86_64 3.6.2-8.fc26                                              
+  python3-rpm.x86_64 4.13.0.2-1.fc26                                            
+  rpm.x86_64 4.13.0.2-1.fc26                                                    
+  rpm-build-libs.x86_64 4.13.0.2-1.fc26                                         
+  rpm-libs.x86_64 4.13.0.2-1.fc26                                               
+  rpm-plugin-selinux.x86_64 4.13.0.2-1.fc26                                     
+  rpm-plugin-systemd-inhibit.x86_64 4.13.0.2-1.fc26                             
+  sssd-client.x86_64 1.15.3-5.fc26                                              
+  system-python.x86_64 3.6.2-8.fc26                                             
+  system-python-libs.x86_64 3.6.2-8.fc26                                        
+  systemd.x86_64 233-7.fc26                                                     
+  systemd-libs.x86_64 233-7.fc26                                                
+  systemd-pam.x86_64 233-7.fc26                                                 
+  util-linux.x86_64 2.30.2-1.fc26                                               
+  vim-minimal.x86_64 2:8.0.1187-1.fc26                                          
+  xkeyboard-config.noarch 2.21-3.fc26                                           
+
+Complete!
+[91m+ dnf -y install nodejs git sed
+[0mLast metadata expiration check: 0:04:29 ago on Wed Nov  8 16:55:45 2017.
+[91mPackage sed-4.4-1.fc26.x86_64 is already installed, skipping.
+[0mDependencies resolved.
+================================================================================
+ Package                  Arch     Version                      Repository
+                                                                           Size
+================================================================================
+Installing:
+ git                      x86_64   2.13.6-1.fc26                updates   1.1 M
+ nodejs                   x86_64   1:6.11.4-1.fc26              updates   4.7 M
+Installing dependencies:
+ compat-openssl10         x86_64   1:1.0.2j-9.fc26              updates   1.1 M
+ fipscheck                x86_64   1.5.0-1.fc26                 fedora     24 k
+ fipscheck-lib            x86_64   1.5.0-1.fc26                 fedora     13 k
+ gc                       x86_64   7.6.0-2.fc26                 fedora    108 k
+ git-core                 x86_64   2.13.6-1.fc26                updates   4.0 M
+ git-core-doc             x86_64   2.13.6-1.fc26                updates   2.2 M
+ groff-base               x86_64   1.22.3-9.fc26                fedora    1.0 M
+ guile                    x86_64   5:2.0.14-1.fc26              fedora    3.5 M
+ http-parser              x86_64   2.7.1-5.fc26                 fedora     34 k
+ less                     x86_64   487-3.fc26                   fedora    157 k
+ libatomic_ops            x86_64   7.4.4-2.fc26                 fedora     31 k
+ libedit                  x86_64   3.1-17.20160618cvs.fc26      fedora     96 k
+ libicu                   x86_64   57.1-6.fc26                  fedora    8.4 M
+ libstdc++                x86_64   7.2.1-2.fc26                 updates   462 k
+ libtool-ltdl             x86_64   2.4.6-17.fc26                fedora     55 k
+ libuv                    x86_64   1:1.11.0-1.fc26              fedora    112 k
+ make                     x86_64   1:4.2.1-2.fc26               fedora    492 k
+ openssh                  x86_64   7.5p1-3.fc26                 updates   468 k
+ openssh-clients          x86_64   7.5p1-3.fc26                 updates   652 k
+ openssl                  x86_64   1:1.1.0f-7.fc26              updates   543 k
+ perl                     x86_64   4:5.24.3-395.fc26            updates   6.1 M
+ perl-Carp                noarch   1.40-366.fc26                fedora     28 k
+ perl-Data-Dumper         x86_64   2.161-2.fc26                 fedora     54 k
+ perl-Encode              x86_64   4:2.88-6.fc26                fedora    1.5 M
+ perl-Errno               x86_64   1.25-395.fc26                updates    69 k
+ perl-Error               noarch   1:0.17024-8.fc26             fedora     44 k
+ perl-Exporter            noarch   5.72-367.fc26                fedora     32 k
+ perl-File-Path           noarch   2.12-367.fc26                fedora     34 k
+ perl-File-Temp           noarch   0.230.400-2.fc26             fedora     61 k
+ perl-Getopt-Long         noarch   2.49.1-2.fc26                fedora     61 k
+ perl-Git                 noarch   2.13.6-1.fc26                updates    68 k
+ perl-HTTP-Tiny           noarch   0.070-2.fc26                 fedora     56 k
+ perl-IO                  x86_64   1.36-395.fc26                updates   134 k
+ perl-MIME-Base64         x86_64   3.15-366.fc26                fedora     28 k
+ perl-Net-SSLeay          x86_64   1.81-1.fc26                  fedora    333 k
+ perl-PathTools           x86_64   3.63-367.fc26                fedora     87 k
+ perl-Pod-Escapes         noarch   1:1.07-366.fc26              fedora     19 k
+ perl-Pod-Perldoc         noarch   3.28-1.fc26                  fedora     86 k
+ perl-Pod-Simple          noarch   1:3.35-2.fc26                fedora    211 k
+ perl-Pod-Usage           noarch   4:1.69-2.fc26                fedora     33 k
+ perl-Scalar-List-Utils   x86_64   3:1.48-1.fc26                updates    65 k
+ perl-Socket              x86_64   4:2.024-2.fc26               fedora     55 k
+ perl-Term-ANSIColor      noarch   4.06-2.fc26                  fedora     44 k
+ perl-Term-Cap            noarch   1.17-366.fc26                fedora     21 k
+ perl-TermReadKey         x86_64   2.37-2.fc26                  fedora     37 k
+ perl-Text-ParseWords     noarch   3.30-366.fc26                fedora     16 k
+ perl-Text-Tabs+Wrap      noarch   2013.0523-366.fc26           fedora     22 k
+ perl-Time-Local          noarch   1:1.250-2.fc26               fedora     30 k
+ perl-URI                 noarch   1.71-6.fc26                  fedora    115 k
+ perl-Unicode-Normalize   x86_64   1.25-366.fc26                fedora     79 k
+ perl-constant            noarch   1.33-368.fc26                fedora     23 k
+ perl-libnet              noarch   3.10-3.fc26                  fedora    119 k
+ perl-libs                x86_64   4:5.24.3-395.fc26            updates   1.5 M
+ perl-macros              x86_64   4:5.24.3-395.fc26            updates    65 k
+ perl-parent              noarch   1:0.236-2.fc26               fedora     18 k
+ perl-podlators           noarch   4.09-2.fc26                  fedora    114 k
+ perl-threads             x86_64   1:2.16-1.fc26                fedora     58 k
+ perl-threads-shared      x86_64   1.57-1.fc26                  fedora     45 k
+Installing weak dependencies:
+ npm                      x86_64   1:3.10.10-1.6.11.4.1.fc26    updates   2.5 M
+ perl-IO-Socket-IP        noarch   0.39-1.fc26                  fedora     45 k
+ perl-IO-Socket-SSL       noarch   2.049-1.fc26                 fedora    270 k
+ perl-Mozilla-CA          noarch   20160104-4.fc26              fedora     13 k
+
+Transaction Summary
+================================================================================
+Install  64 Packages
+
+Total download size: 43 M
+Installed size: 152 M
+Downloading Packages:
+(1/64): http-parser-2.7.1-5.fc26.x86_64.rpm      37 kB/s |  34 kB     00:00    
+(2/64): libuv-1.11.0-1.fc26.x86_64.rpm          220 kB/s | 112 kB     00:00    
+(3/64): git-2.13.6-1.fc26.x86_64.rpm            809 kB/s | 1.1 MB     00:01    
+(4/64): git-core-2.13.6-1.fc26.x86_64.rpm       2.9 MB/s | 4.0 MB     00:01    
+(5/64): libicu-57.1-6.fc26.x86_64.rpm           1.7 MB/s | 8.4 MB     00:04    
+(6/64): git-core-doc-2.13.6-1.fc26.x86_64.rpm   2.5 MB/s | 2.2 MB     00:00    
+(7/64): perl-Error-0.17024-8.fc26.noarch.rpm    333 kB/s |  44 kB     00:00    
+(8/64): perl-Getopt-Long-2.49.1-2.fc26.noarch.r 470 kB/s |  61 kB     00:00    
+(9/64): perl-Git-2.13.6-1.fc26.noarch.rpm       124 kB/s |  68 kB     00:00    
+(10/64): perl-PathTools-3.63-367.fc26.x86_64.rp 768 kB/s |  87 kB     00:00    
+(11/64): nodejs-6.11.4-1.fc26.x86_64.rpm        856 kB/s | 4.7 MB     00:05    
+(12/64): less-487-3.fc26.x86_64.rpm             686 kB/s | 157 kB     00:00    
+(13/64): perl-TermReadKey-2.37-2.fc26.x86_64.rp  86 kB/s |  37 kB     00:00    
+(14/64): perl-Exporter-5.72-367.fc26.noarch.rpm 270 kB/s |  32 kB     00:00    
+(15/64): perl-Pod-Usage-1.69-2.fc26.noarch.rpm  157 kB/s |  33 kB     00:00    
+(16/64): perl-Time-Local-1.250-2.fc26.noarch.rp 128 kB/s |  30 kB     00:00    
+(17/64): perl-Carp-1.40-366.fc26.noarch.rpm      52 kB/s |  28 kB     00:00    
+(18/64): perl-Text-ParseWords-3.30-366.fc26.noa 143 kB/s |  16 kB     00:00    
+(19/64): perl-constant-1.33-368.fc26.noarch.rpm 108 kB/s |  23 kB     00:00    
+(20/64): perl-parent-0.236-2.fc26.noarch.rpm    152 kB/s |  18 kB     00:00    
+(21/64): perl-Pod-Perldoc-3.28-1.fc26.noarch.rp 380 kB/s |  86 kB     00:00    
+(22/64): perl-File-Temp-0.230.400-2.fc26.noarch 557 kB/s |  61 kB     00:00    
+(23/64): perl-HTTP-Tiny-0.070-2.fc26.noarch.rpm 490 kB/s |  56 kB     00:00    
+(24/64): perl-podlators-4.09-2.fc26.noarch.rpm  252 kB/s | 114 kB     00:00    
+(25/64): perl-Pod-Simple-3.35-2.fc26.noarch.rpm 937 kB/s | 211 kB     00:00    
+(26/64): perl-Term-ANSIColor-4.06-2.fc26.noarch 194 kB/s |  44 kB     00:00    
+(27/64): perl-Term-Cap-1.17-366.fc26.noarch.rpm 106 kB/s |  21 kB     00:00    
+(28/64): perl-File-Path-2.12-367.fc26.noarch.rp 172 kB/s |  34 kB     00:00    
+(29/64): perl-MIME-Base64-3.15-366.fc26.x86_64. 132 kB/s |  28 kB     00:00    
+(30/64): perl-Pod-Escapes-1.07-366.fc26.noarch. 173 kB/s |  19 kB     00:00    
+(31/64): perl-Socket-2.024-2.fc26.x86_64.rpm    174 kB/s |  55 kB     00:00    
+(32/64): perl-Text-Tabs+Wrap-2013.0523-366.fc26 114 kB/s |  22 kB     00:00    
+(33/64): groff-base-1.22.3-9.fc26.x86_64.rpm    648 kB/s | 1.0 MB     00:01    
+(34/64): perl-Unicode-Normalize-1.25-366.fc26.x 310 kB/s |  79 kB     00:00    
+(35/64): perl-threads-2.16-1.fc26.x86_64.rpm    443 kB/s |  58 kB     00:00    
+(36/64): perl-threads-shared-1.57-1.fc26.x86_64 343 kB/s |  45 kB     00:00    
+(37/64): perl-Errno-1.25-395.fc26.x86_64.rpm    116 kB/s |  69 kB     00:00    
+(38/64): perl-libs-5.24.3-395.fc26.x86_64.rpm   953 kB/s | 1.5 MB     00:01    
+(39/64): perl-IO-1.36-395.fc26.x86_64.rpm       575 kB/s | 134 kB     00:00    
+(40/64): perl-Scalar-List-Utils-1.48-1.fc26.x86 361 kB/s |  65 kB     00:00    
+(41/64): libstdc++-7.2.1-2.fc26.x86_64.rpm      1.1 MB/s | 462 kB     00:00    
+(42/64): perl-macros-5.24.3-395.fc26.x86_64.rpm 637 kB/s |  65 kB     00:00    
+(43/64): perl-Encode-2.88-6.fc26.x86_64.rpm     907 kB/s | 1.5 MB     00:01    
+(44/64): make-4.2.1-2.fc26.x86_64.rpm           1.9 MB/s | 492 kB     00:00    
+(45/64): compat-openssl10-1.0.2j-9.fc26.x86_64. 1.4 MB/s | 1.1 MB     00:00    
+(46/64): gc-7.6.0-2.fc26.x86_64.rpm             785 kB/s | 108 kB     00:00    
+(47/64): libatomic_ops-7.4.4-2.fc26.x86_64.rpm  239 kB/s |  31 kB     00:00    
+(48/64): libtool-ltdl-2.4.6-17.fc26.x86_64.rpm  415 kB/s |  55 kB     00:00    
+(49/64): openssh-clients-7.5p1-3.fc26.x86_64.rp 998 kB/s | 652 kB     00:00    
+(50/64): openssh-7.5p1-3.fc26.x86_64.rpm        1.1 MB/s | 468 kB     00:00    
+(51/64): fipscheck-lib-1.5.0-1.fc26.x86_64.rpm  109 kB/s |  13 kB     00:00    
+(52/64): perl-5.24.3-395.fc26.x86_64.rpm        1.1 MB/s | 6.1 MB     00:05    
+(53/64): libedit-3.1-17.20160618cvs.fc26.x86_64 279 kB/s |  96 kB     00:00    
+(54/64): guile-2.0.14-1.fc26.x86_64.rpm         1.6 MB/s | 3.5 MB     00:02    
+(55/64): fipscheck-1.5.0-1.fc26.x86_64.rpm       66 kB/s |  24 kB     00:00    
+(56/64): perl-Mozilla-CA-20160104-4.fc26.noarch 103 kB/s |  13 kB     00:00    
+(57/64): perl-IO-Socket-IP-0.39-1.fc26.noarch.r 341 kB/s |  45 kB     00:00    
+(58/64): perl-IO-Socket-SSL-2.049-1.fc26.noarch 409 kB/s | 270 kB     00:00    
+(59/64): openssl-1.1.0f-7.fc26.x86_64.rpm       591 kB/s | 543 kB     00:00    
+(60/64): npm-3.10.10-1.6.11.4.1.fc26.x86_64.rpm 1.7 MB/s | 2.5 MB     00:01    
+(61/64): perl-Net-SSLeay-1.81-1.fc26.x86_64.rpm 848 kB/s | 333 kB     00:00    
+(62/64): perl-URI-1.71-6.fc26.noarch.rpm        478 kB/s | 115 kB     00:00    
+(63/64): perl-libnet-3.10-3.fc26.noarch.rpm     684 kB/s | 119 kB     00:00    
+(64/64): perl-Data-Dumper-2.161-2.fc26.x86_64.r 123 kB/s |  54 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           2.8 MB/s |  43 MB     00:15     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : perl-Exporter-5.72-367.fc26.noarch                    1/64 
+  Installing       : perl-libs-4:5.24.3-395.fc26.x86_64                    2/64 
+  Running scriptlet: perl-libs-4:5.24.3-395.fc26.x86_64                    2/64 
+  Installing       : perl-Carp-1.40-366.fc26.noarch                        3/64 
+  Installing       : perl-Scalar-List-Utils-3:1.48-1.fc26.x86_64           4/64 
+  Installing       : libstdc++-7.2.1-2.fc26.x86_64                         5/64 
+  Running scriptlet: libstdc++-7.2.1-2.fc26.x86_64                         5/64 
+  Installing       : fipscheck-1.5.0-1.fc26.x86_64                         6/64 
+  Installing       : fipscheck-lib-1.5.0-1.fc26.x86_64                     7/64 
+  Running scriptlet: fipscheck-lib-1.5.0-1.fc26.x86_64                     7/64 
+  Installing       : perl-Text-ParseWords-3.30-366.fc26.noarch             8/64 
+  Running scriptlet: openssh-7.5p1-3.fc26.x86_64                           9/64 
+  Installing       : openssh-7.5p1-3.fc26.x86_64                           9/64 
+  Installing       : libicu-57.1-6.fc26.x86_64                            10/64 
+  Running scriptlet: libicu-57.1-6.fc26.x86_64                            10/64 
+  Installing       : groff-base-1.22.3-9.fc26.x86_64                      11/64 
+  Installing       : perl-Term-ANSIColor-4.06-2.fc26.noarch               12/64 
+  Installing       : perl-macros-4:5.24.3-395.fc26.x86_64                 13/64 
+  Installing       : perl-Socket-4:2.024-2.fc26.x86_64                    14/64 
+  Installing       : perl-Errno-1.25-395.fc26.x86_64                      15/64 
+  Installing       : perl-constant-1.33-368.fc26.noarch                   16/64 
+  Installing       : perl-parent-1:0.236-2.fc26.noarch                    17/64 
+  Installing       : perl-File-Path-2.12-367.fc26.noarch                  18/64 
+  Installing       : perl-Text-Tabs+Wrap-2013.0523-366.fc26.noarch        19/64 
+  Installing       : perl-Unicode-Normalize-1.25-366.fc26.x86_64          20/64 
+  Installing       : perl-threads-shared-1.57-1.fc26.x86_64               21/64 
+  Installing       : perl-threads-1:2.16-1.fc26.x86_64                    22/64 
+  Installing       : perl-IO-1.36-395.fc26.x86_64                         23/64 
+  Installing       : perl-PathTools-3.63-367.fc26.x86_64                  24/64 
+  Installing       : perl-4:5.24.3-395.fc26.x86_64                        25/64 
+  Installing       : perl-MIME-Base64-3.15-366.fc26.x86_64                26/64 
+  Installing       : perl-Time-Local-1:1.250-2.fc26.noarch                27/64 
+  Installing       : perl-HTTP-Tiny-0.070-2.fc26.noarch                   28/64 
+  Installing       : perl-Error-1:0.17024-8.fc26.noarch                   29/64 
+  Installing       : perl-IO-Socket-IP-0.39-1.fc26.noarch                 30/64 
+  Installing       : perl-libnet-3.10-3.fc26.noarch                       31/64 
+  Installing       : perl-Net-SSLeay-1.81-1.fc26.x86_64                   32/64 
+  Installing       : perl-TermReadKey-2.37-2.fc26.x86_64                  33/64 
+  Installing       : perl-File-Temp-0.230.400-2.fc26.noarch               34/64 
+  Installing       : perl-Term-Cap-1.17-366.fc26.noarch                   35/64 
+  Installing       : perl-Pod-Escapes-1:1.07-366.fc26.noarch              36/64 
+  Installing       : perl-Pod-Usage-4:1.69-2.fc26.noarch                  37/64 
+  Installing       : perl-Getopt-Long-2.49.1-2.fc26.noarch                38/64 
+  Installing       : perl-Encode-4:2.88-6.fc26.x86_64                     39/64 
+  Installing       : perl-Pod-Simple-1:3.35-2.fc26.noarch                 40/64 
+  Installing       : perl-podlators-4.09-2.fc26.noarch                    41/64 
+  Installing       : perl-Pod-Perldoc-3.28-1.fc26.noarch                  42/64 
+  Installing       : perl-Data-Dumper-2.161-2.fc26.x86_64                 43/64 
+  Installing       : perl-URI-1.71-6.fc26.noarch                          44/64 
+  Installing       : libedit-3.1-17.20160618cvs.fc26.x86_64               45/64 
+  Running scriptlet: libedit-3.1-17.20160618cvs.fc26.x86_64               45/64 
+  Installing       : openssh-clients-7.5p1-3.fc26.x86_64                  46/64 
+  Installing       : libtool-ltdl-2.4.6-17.fc26.x86_64                    47/64 
+  Running scriptlet: libtool-ltdl-2.4.6-17.fc26.x86_64                    47/64 
+  Installing       : libatomic_ops-7.4.4-2.fc26.x86_64                    48/64 
+  Running scriptlet: libatomic_ops-7.4.4-2.fc26.x86_64                    48/64 
+  Installing       : gc-7.6.0-2.fc26.x86_64                               49/64 
+  Running scriptlet: gc-7.6.0-2.fc26.x86_64                               49/64 
+  Installing       : guile-5:2.0.14-1.fc26.x86_64                         50/64 
+  Running scriptlet: guile-5:2.0.14-1.fc26.x86_64                         50/64 
+  Installing       : make-1:4.2.1-2.fc26.x86_64                           51/64 
+  Running scriptlet: make-1:4.2.1-2.fc26.x86_64                           51/64 
+  Installing       : compat-openssl10-1:1.0.2j-9.fc26.x86_64              52/64 
+  Running scriptlet: compat-openssl10-1:1.0.2j-9.fc26.x86_64              52/64 
+  Installing       : openssl-1:1.1.0f-7.fc26.x86_64                       53/64 
+  Installing       : less-487-3.fc26.x86_64                               54/64 
+  Installing       : git-core-2.13.6-1.fc26.x86_64                        55/64 
+  Installing       : git-core-doc-2.13.6-1.fc26.x86_64                    56/64 
+  Installing       : perl-Git-2.13.6-1.fc26.noarch                        57/64 
+  Installing       : git-2.13.6-1.fc26.x86_64                             58/64 
+  Installing       : libuv-1:1.11.0-1.fc26.x86_64                         59/64 
+  Running scriptlet: libuv-1:1.11.0-1.fc26.x86_64                         59/64 
+  Installing       : http-parser-2.7.1-5.fc26.x86_64                      60/64 
+  Running scriptlet: http-parser-2.7.1-5.fc26.x86_64                      60/64 
+  Installing       : nodejs-1:6.11.4-1.fc26.x86_64                        61/64 
+  Installing       : npm-1:3.10.10-1.6.11.4.1.fc26.x86_64                 62/64 
+  Installing       : perl-IO-Socket-SSL-2.049-1.fc26.noarch               63/64 
+  Installing       : perl-Mozilla-CA-20160104-4.fc26.noarch               64/64 
+  Running scriptlet: guile-5:2.0.14-1.fc26.x86_64                         64/64 
+  Verifying        : nodejs-1:6.11.4-1.fc26.x86_64                         1/64 
+  Verifying        : http-parser-2.7.1-5.fc26.x86_64                       2/64 
+  Verifying        : libicu-57.1-6.fc26.x86_64                             3/64 
+  Verifying        : libuv-1:1.11.0-1.fc26.x86_64                          4/64 
+  Verifying        : git-2.13.6-1.fc26.x86_64                              5/64 
+  Verifying        : git-core-2.13.6-1.fc26.x86_64                         6/64 
+  Verifying        : git-core-doc-2.13.6-1.fc26.x86_64                     7/64 
+  Verifying        : perl-Git-2.13.6-1.fc26.noarch                         8/64 
+  Verifying        : perl-Error-1:0.17024-8.fc26.noarch                    9/64 
+  Verifying        : perl-Getopt-Long-2.49.1-2.fc26.noarch                10/64 
+  Verifying        : perl-PathTools-3.63-367.fc26.x86_64                  11/64 
+  Verifying        : perl-TermReadKey-2.37-2.fc26.x86_64                  12/64 
+  Verifying        : less-487-3.fc26.x86_64                               13/64 
+  Verifying        : perl-Carp-1.40-366.fc26.noarch                       14/64 
+  Verifying        : perl-Exporter-5.72-367.fc26.noarch                   15/64 
+  Verifying        : perl-Time-Local-1:1.250-2.fc26.noarch                16/64 
+  Verifying        : perl-Pod-Usage-4:1.69-2.fc26.noarch                  17/64 
+  Verifying        : perl-Text-ParseWords-3.30-366.fc26.noarch            18/64 
+  Verifying        : perl-constant-1.33-368.fc26.noarch                   19/64 
+  Verifying        : perl-parent-1:0.236-2.fc26.noarch                    20/64 
+  Verifying        : perl-Pod-Perldoc-3.28-1.fc26.noarch                  21/64 
+  Verifying        : perl-podlators-4.09-2.fc26.noarch                    22/64 
+  Verifying        : groff-base-1.22.3-9.fc26.x86_64                      23/64 
+  Verifying        : perl-File-Temp-0.230.400-2.fc26.noarch               24/64 
+  Verifying        : perl-HTTP-Tiny-0.070-2.fc26.noarch                   25/64 
+  Verifying        : perl-Pod-Simple-1:3.35-2.fc26.noarch                 26/64 
+  Verifying        : perl-Term-ANSIColor-4.06-2.fc26.noarch               27/64 
+  Verifying        : perl-Term-Cap-1.17-366.fc26.noarch                   28/64 
+  Verifying        : perl-File-Path-2.12-367.fc26.noarch                  29/64 
+  Verifying        : perl-MIME-Base64-3.15-366.fc26.x86_64                30/64 
+  Verifying        : perl-Socket-4:2.024-2.fc26.x86_64                    31/64 
+  Verifying        : perl-Pod-Escapes-1:1.07-366.fc26.noarch              32/64 
+  Verifying        : perl-Text-Tabs+Wrap-2013.0523-366.fc26.noarch        33/64 
+  Verifying        : perl-4:5.24.3-395.fc26.x86_64                        34/64 
+  Verifying        : perl-libs-4:5.24.3-395.fc26.x86_64                   35/64 
+  Verifying        : perl-Unicode-Normalize-1.25-366.fc26.x86_64          36/64 
+  Verifying        : perl-threads-1:2.16-1.fc26.x86_64                    37/64 
+  Verifying        : perl-threads-shared-1.57-1.fc26.x86_64               38/64 
+  Verifying        : perl-Errno-1.25-395.fc26.x86_64                      39/64 
+  Verifying        : perl-Encode-4:2.88-6.fc26.x86_64                     40/64 
+  Verifying        : perl-IO-1.36-395.fc26.x86_64                         41/64 
+  Verifying        : perl-Scalar-List-Utils-3:1.48-1.fc26.x86_64          42/64 
+  Verifying        : libstdc++-7.2.1-2.fc26.x86_64                        43/64 
+  Verifying        : perl-macros-4:5.24.3-395.fc26.x86_64                 44/64 
+  Verifying        : compat-openssl10-1:1.0.2j-9.fc26.x86_64              45/64 
+  Verifying        : make-1:4.2.1-2.fc26.x86_64                           46/64 
+  Verifying        : gc-7.6.0-2.fc26.x86_64                               47/64 
+  Verifying        : guile-5:2.0.14-1.fc26.x86_64                         48/64 
+  Verifying        : libatomic_ops-7.4.4-2.fc26.x86_64                    49/64 
+  Verifying        : libtool-ltdl-2.4.6-17.fc26.x86_64                    50/64 
+  Verifying        : openssh-clients-7.5p1-3.fc26.x86_64                  51/64 
+  Verifying        : openssh-7.5p1-3.fc26.x86_64                          52/64 
+  Verifying        : fipscheck-lib-1.5.0-1.fc26.x86_64                    53/64 
+  Verifying        : libedit-3.1-17.20160618cvs.fc26.x86_64               54/64 
+  Verifying        : fipscheck-1.5.0-1.fc26.x86_64                        55/64 
+  Verifying        : npm-1:3.10.10-1.6.11.4.1.fc26.x86_64                 56/64 
+  Verifying        : perl-Mozilla-CA-20160104-4.fc26.noarch               57/64 
+  Verifying        : perl-IO-Socket-IP-0.39-1.fc26.noarch                 58/64 
+  Verifying        : perl-IO-Socket-SSL-2.049-1.fc26.noarch               59/64 
+  Verifying        : openssl-1:1.1.0f-7.fc26.x86_64                       60/64 
+  Verifying        : perl-Net-SSLeay-1.81-1.fc26.x86_64                   61/64 
+  Verifying        : perl-URI-1.71-6.fc26.noarch                          62/64 
+  Verifying        : perl-Data-Dumper-2.161-2.fc26.x86_64                 63/64 
+  Verifying        : perl-libnet-3.10-3.fc26.noarch                       64/64 
+
+Installed:
+  git.x86_64 2.13.6-1.fc26                                                      
+  nodejs.x86_64 1:6.11.4-1.fc26                                                 
+  npm.x86_64 1:3.10.10-1.6.11.4.1.fc26                                          
+  perl-IO-Socket-IP.noarch 0.39-1.fc26                                          
+  perl-IO-Socket-SSL.noarch 2.049-1.fc26                                        
+  perl-Mozilla-CA.noarch 20160104-4.fc26                                        
+  compat-openssl10.x86_64 1:1.0.2j-9.fc26                                       
+  fipscheck.x86_64 1.5.0-1.fc26                                                 
+  fipscheck-lib.x86_64 1.5.0-1.fc26                                             
+  gc.x86_64 7.6.0-2.fc26                                                        
+  git-core.x86_64 2.13.6-1.fc26                                                 
+  git-core-doc.x86_64 2.13.6-1.fc26                                             
+  groff-base.x86_64 1.22.3-9.fc26                                               
+  guile.x86_64 5:2.0.14-1.fc26                                                  
+  http-parser.x86_64 2.7.1-5.fc26                                               
+  less.x86_64 487-3.fc26                                                        
+  libatomic_ops.x86_64 7.4.4-2.fc26                                             
+  libedit.x86_64 3.1-17.20160618cvs.fc26                                        
+  libicu.x86_64 57.1-6.fc26                                                     
+  libstdc++.x86_64 7.2.1-2.fc26                                                 
+  libtool-ltdl.x86_64 2.4.6-17.fc26                                             
+  libuv.x86_64 1:1.11.0-1.fc26                                                  
+  make.x86_64 1:4.2.1-2.fc26                                                    
+  openssh.x86_64 7.5p1-3.fc26                                                   
+  openssh-clients.x86_64 7.5p1-3.fc26                                           
+  openssl.x86_64 1:1.1.0f-7.fc26                                                
+  perl.x86_64 4:5.24.3-395.fc26                                                 
+  perl-Carp.noarch 1.40-366.fc26                                                
+  perl-Data-Dumper.x86_64 2.161-2.fc26                                          
+  perl-Encode.x86_64 4:2.88-6.fc26                                              
+  perl-Errno.x86_64 1.25-395.fc26                                               
+  perl-Error.noarch 1:0.17024-8.fc26                                            
+  perl-Exporter.noarch 5.72-367.fc26                                            
+  perl-File-Path.noarch 2.12-367.fc26                                           
+  perl-File-Temp.noarch 0.230.400-2.fc26                                        
+  perl-Getopt-Long.noarch 2.49.1-2.fc26                                         
+  perl-Git.noarch 2.13.6-1.fc26                                                 
+  perl-HTTP-Tiny.noarch 0.070-2.fc26                                            
+  perl-IO.x86_64 1.36-395.fc26                                                  
+  perl-MIME-Base64.x86_64 3.15-366.fc26                                         
+  perl-Net-SSLeay.x86_64 1.81-1.fc26                                            
+  perl-PathTools.x86_64 3.63-367.fc26                                           
+  perl-Pod-Escapes.noarch 1:1.07-366.fc26                                       
+  perl-Pod-Perldoc.noarch 3.28-1.fc26                                           
+  perl-Pod-Simple.noarch 1:3.35-2.fc26                                          
+  perl-Pod-Usage.noarch 4:1.69-2.fc26                                           
+  perl-Scalar-List-Utils.x86_64 3:1.48-1.fc26                                   
+  perl-Socket.x86_64 4:2.024-2.fc26                                             
+  perl-Term-ANSIColor.noarch 4.06-2.fc26                                        
+  perl-Term-Cap.noarch 1.17-366.fc26                                            
+  perl-TermReadKey.x86_64 2.37-2.fc26                                           
+  perl-Text-ParseWords.noarch 3.30-366.fc26                                     
+  perl-Text-Tabs+Wrap.noarch 2013.0523-366.fc26                                 
+  perl-Time-Local.noarch 1:1.250-2.fc26                                         
+  perl-URI.noarch 1.71-6.fc26                                                   
+  perl-Unicode-Normalize.x86_64 1.25-366.fc26                                   
+  perl-constant.noarch 1.33-368.fc26                                            
+  perl-libnet.noarch 3.10-3.fc26                                                
+  perl-libs.x86_64 4:5.24.3-395.fc26                                            
+  perl-macros.x86_64 4:5.24.3-395.fc26                                          
+  perl-parent.noarch 1:0.236-2.fc26                                             
+  perl-podlators.noarch 4.09-2.fc26                                             
+  perl-threads.x86_64 1:2.16-1.fc26                                             
+  perl-threads-shared.x86_64 1.57-1.fc26                                        
+
+Complete!
+[91m+ git clone https://github.com/irinabov/react-tic-tac-toe.git
+[0m[91mCloning into 'react-tic-tac-toe'...
+[0m[91m+ cd react-tic-tac-toe
++ npm install
+[0m[91mnpm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+[0m[91mnpm WARN deprecated wrench@1.5.1: wrench.js is deprecated! You should check out fs-extra (https://github.com/jprichardson/node-fs-extra) for any operations you were using wrench for. Thanks for all the usage over the years.
+[0m[91mnpm WARN deprecated[0m[91m graceful-fs@2.0.1: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
+[0m[91mnpm WARN deprecated[0m[91m minimatch@1.0.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+[0m[91mnpm WARN deprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
+[0m[91mnpm WARN[0m[91m deprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
+[0m[91mnpm WARN deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+[0m[91mnpm WARN prefer global[0m[91m node-gyp@3.6.2 should be installed with -g
+[0m
+> node-sass@3.13.1 install /react-tic-tac-toe/node_modules/node-sass
+> node scripts/install.js
+
+Downloading binary from https://github.com/sass/node-sass/releases/download/v3.13.1/linux-x64-48_binding.node
+Download complete
+Binary saved to /react-tic-tac-toe/node_modules/node-sass/vendor/linux-x64-48/binding.node
+Caching binary to /root/.npm/node-sass/3.13.1/linux-x64-48_binding.node
+
+> node-sass@3.13.1 postinstall /react-tic-tac-toe/node_modules/node-sass
+> node scripts/build.js
+
+Binary found at /react-tic-tac-toe/node_modules/node-sass/vendor/linux-x64-48/binding.node
+Testing binary
+Binary is fine
+react-tic-tac-toe@1.0.3 /react-tic-tac-toe
++-- autoprefixer@6.7.7 
+| +-- browserslist@1.7.7 
+| | `-- electron-to-chromium@1.3.27 
+| +-- caniuse-db@1.0.30000760 
+| +-- normalize-range@0.1.2 
+| +-- num2fraction@1.2.2 
+| +-- postcss@5.2.18 
+| | +-- js-base64@2.3.2 
+| | `-- source-map@0.5.7 
+| `-- postcss-value-parser@3.3.0 
++-- babel@5.8.38 
+| +-- chokidar@1.7.0 
+| | +-- anymatch@1.3.2 
+| | | `-- normalize-path@2.1.1 
+| | |   `-- remove-trailing-separator@1.1.0 
+| | +-- async-each@1.0.1 
+| | +-- glob-parent@2.0.0 
+| | +-- inherits@2.0.3 
+| | +-- is-binary-path@1.0.1 
+| | | `-- binary-extensions@1.10.0 
+| | +-- is-glob@2.0.1 
+| | | `-- is-extglob@1.0.0 
+| | `-- readdirp@2.1.0 
+| |   `-- set-immediate-shim@1.0.1 
+| +-- commander@2.11.0 
+| +-- convert-source-map@1.5.0 
+| +-- fs-readdir-recursive@0.1.2 
+| +-- glob@5.0.15 
+| | +-- inflight@1.0.6 
+| | | `-- wrappy@1.0.2 
+| | `-- once@1.4.0 
+| +-- lodash@3.10.1 
+| +-- output-file-sync@1.1.2 
+| | +-- graceful-fs@4.1.11 
+| | `-- object-assign@4.1.1 
+| +-- path-exists@1.0.0 
+| +-- path-is-absolute@1.0.1 
+| +-- slash@1.0.0 
+| `-- source-map@0.5.7 
++-- babel-core@5.8.38 
+| +-- babel-plugin-constant-folding@1.0.1 
+| +-- babel-plugin-dead-code-elimination@1.0.2 
+| +-- babel-plugin-eval@1.0.1 
+| +-- babel-plugin-inline-environment-variables@1.0.1 
+| +-- babel-plugin-jscript@1.0.4 
+| +-- babel-plugin-member-expression-literals@1.0.1 
+| +-- babel-plugin-property-literals@1.0.1 
+| +-- babel-plugin-proto-to-assign@1.0.4 
+| +-- babel-plugin-react-constant-elements@1.0.3 
+| +-- babel-plugin-react-display-name@1.0.3 
+| +-- babel-plugin-remove-console@1.0.1 
+| +-- babel-plugin-remove-debugger@1.0.1 
+| +-- babel-plugin-runtime@1.0.7 
+| +-- babel-plugin-undeclared-variables-check@1.0.2 
+| | `-- leven@1.0.2 
+| +-- babel-plugin-undefined-to-void@1.1.6 
+| +-- babylon@5.8.38 
+| +-- bluebird@2.11.0 
+| +-- chalk@1.1.3 
+| | +-- ansi-styles@2.2.1 
+| | +-- has-ansi@2.0.0 
+| | `-- supports-color@2.0.0 
+| +-- core-js@1.2.7 
+| +-- debug@2.6.9 
+| | `-- ms@2.0.0 
+| +-- detect-indent@3.0.1 
+| | `-- minimist@1.2.0 
+| +-- esutils@2.0.2 
+| +-- globals@6.4.1 
+| +-- home-or-tmp@1.0.0 
+| | +-- os-tmpdir@1.0.2 
+| | `-- user-home@1.1.1 
+| +-- is-integer@1.0.7 
+| | `-- is-finite@1.0.2 
+| |   `-- number-is-nan@1.0.1 
+| +-- js-tokens@1.0.1 
+| +-- json5@0.4.0 
+| +-- minimatch@2.0.10 
+| | `-- brace-expansion@1.1.8 
+| |   +-- balanced-match@1.0.0 
+| |   `-- concat-map@0.0.1 
+| +-- private@0.1.8 
+| +-- regenerator@0.8.40 
+| | +-- commoner@0.10.8 
+| | | +-- detective@4.5.0 
+| | | | `-- acorn@4.0.13 
+| | | +-- iconv-lite@0.4.19 
+| | | `-- recast@0.11.23 
+| | |   +-- ast-types@0.9.6 
+| | |   +-- esprima@3.1.3 
+| | |   `-- source-map@0.5.7 
+| | +-- defs@1.1.1 
+| | | +-- alter@0.2.0 
+| | | | `-- stable@0.1.6 
+| | | +-- ast-traverse@0.1.1 
+| | | +-- breakable@1.0.0 
+| | | +-- esprima-fb@15001.1001.0-dev-harmony-fb 
+| | | +-- simple-fmt@0.1.0 
+| | | +-- simple-is@0.2.0 
+| | | +-- stringmap@0.2.2 
+| | | +-- stringset@0.2.1 
+| | | +-- tryor@0.1.2 
+| | | `-- yargs@3.27.0 
+| | |   `-- window-size@0.1.4 
+| | +-- esprima-fb@15001.1001.0-dev-harmony-fb 
+| | +-- recast@0.10.33 
+| | | +-- ast-types@0.8.12 
+| | | `-- source-map@0.5.7 
+| | `-- through@2.3.8 
+| +-- regexpu@1.3.0 
+| | +-- esprima@2.7.3 
+| | +-- recast@0.10.43 
+| | | +-- ast-types@0.8.15 
+| | | +-- esprima-fb@15001.1001.0-dev-harmony-fb 
+| | | `-- source-map@0.5.7 
+| | +-- regenerate@1.3.3 
+| | +-- regjsgen@0.2.0 
+| | `-- regjsparser@0.1.5 
+| |   `-- jsesc@0.5.0 
+| +-- repeating@1.1.3 
+| +-- resolve@1.5.0 
+| | `-- path-parse@1.0.5 
+| +-- shebang-regex@1.0.0 
+| +-- source-map@0.5.7 
+| +-- source-map-support@0.2.10 
+| | `-- source-map@0.1.32 
+| |   `-- amdefine@1.0.1 
+| +-- to-fast-properties@1.0.3 
+| +-- trim-right@1.0.1 
+| `-- try-resolve@1.0.1 
++-- babel-eslint@4.1.8 
+| +-- acorn-to-esprima@1.0.7 
+| +-- lodash.assign@3.2.0 
+| | +-- lodash._baseassign@3.2.0 
+| | | `-- lodash._basecopy@3.0.1 
+| | +-- lodash._createassigner@3.1.1 
+| | | `-- lodash._isiterateecall@3.0.9 
+| | `-- lodash.keys@3.1.2 
+| `-- lodash.pick@3.1.0 
+|   +-- lodash._baseflatten@3.1.4 
+|   +-- lodash._bindcallback@3.0.1 
+|   +-- lodash._pickbyarray@3.0.2 
+|   +-- lodash._pickbycallback@3.0.0 
+|   | `-- lodash._basefor@3.0.3 
+|   `-- lodash.restparam@3.6.1 
++-- babel-loader@5.4.2 
+| +-- loader-utils@0.2.17 
+| | +-- big.js@3.2.0 
+| | +-- emojis-list@2.1.0 
+| | +-- json5@0.5.1 
+| | `-- object-assign@4.1.1 
+| `-- object-assign@3.0.0 
++-- chai@3.5.0 
+| +-- assertion-error@1.0.2 
+| +-- deep-eql@0.1.3 
+| | `-- type-detect@0.1.1 
+| `-- type-detect@1.0.0 
++-- clean-webpack-plugin@0.1.17 
+| `-- rimraf@2.6.2 
+|   `-- glob@7.1.2 
++-- css-loader@0.19.0 
+| +-- css-selector-tokenizer@0.5.4 
+| | +-- cssesc@0.1.0 
+| | `-- fastparse@1.1.1 
+| +-- cssnano@3.10.0 
+| | +-- decamelize@1.2.0 
+| | +-- defined@1.0.0 
+| | +-- has@1.0.1 
+| | | `-- function-bind@1.1.1 
+| | +-- object-assign@4.1.1 
+| | +-- postcss-calc@5.3.1 
+| | | +-- postcss-message-helpers@2.0.0 
+| | | `-- reduce-css-calc@1.3.0 
+| | |   +-- balanced-match@0.4.2 
+| | |   +-- math-expression-evaluator@1.2.17 
+| | |   `-- reduce-function-call@1.0.2 
+| | |     `-- balanced-match@0.4.2 
+| | +-- postcss-colormin@2.2.2 
+| | | `-- colormin@1.1.2 
+| | |   +-- color@0.11.4 
+| | |   | +-- color-convert@1.9.0 
+| | |   | | `-- color-name@1.1.3 
+| | |   | `-- color-string@0.3.0 
+| | |   `-- css-color-names@0.0.4 
+| | +-- postcss-convert-values@2.6.1 
+| | +-- postcss-discard-comments@2.0.4 
+| | +-- postcss-discard-duplicates@2.1.0 
+| | +-- postcss-discard-empty@2.1.0 
+| | +-- postcss-discard-overridden@0.1.1 
+| | +-- postcss-discard-unused@2.2.3 
+| | | `-- uniqs@2.0.0 
+| | +-- postcss-filter-plugins@2.0.2 
+| | | `-- uniqid@4.1.1 
+| | |   `-- macaddress@0.2.8 
+| | +-- postcss-merge-idents@2.1.7 
+| | +-- postcss-merge-longhand@2.0.2 
+| | +-- postcss-merge-rules@2.1.2 
+| | | +-- caniuse-api@1.6.1 
+| | | | +-- lodash.memoize@4.1.2 
+| | | | `-- lodash.uniq@4.5.0 
+| | | +-- postcss-selector-parser@2.2.3 
+| | | | +-- flatten@1.0.2 
+| | | | +-- indexes-of@1.0.1 
+| | | | `-- uniq@1.0.1 
+| | | `-- vendors@1.0.1 
+| | +-- postcss-minify-font-values@1.0.5 
+| | | `-- object-assign@4.1.1 
+| | +-- postcss-minify-gradients@1.0.5 
+| | +-- postcss-minify-params@1.2.2 
+| | | `-- alphanum-sort@1.0.2 
+| | +-- postcss-minify-selectors@2.1.1 
+| | +-- postcss-normalize-charset@1.1.1 
+| | +-- postcss-normalize-url@3.0.8 
+| | | +-- is-absolute-url@2.1.0 
+| | | `-- normalize-url@1.9.1 
+| | |   +-- object-assign@4.1.1 
+| | |   +-- prepend-http@1.0.4 
+| | |   +-- query-string@4.3.4 
+| | |   | +-- object-assign@4.1.1 
+| | |   | `-- strict-uri-encode@1.1.0 
+| | |   `-- sort-keys@1.1.2 
+| | |     `-- is-plain-obj@1.1.0 
+| | +-- postcss-ordered-values@2.2.3 
+| | +-- postcss-reduce-idents@2.4.0 
+| | +-- postcss-reduce-initial@1.0.1 
+| | +-- postcss-reduce-transforms@1.0.4 
+| | +-- postcss-svgo@2.1.6 
+| | | +-- is-svg@2.1.0 
+| | | | `-- html-comment-regex@1.1.1 
+| | | `-- svgo@0.7.2 
+| | |   +-- coa@1.0.4 
+| | |   +-- colors@1.1.2 
+| | |   +-- csso@2.3.2 
+| | |   | +-- clap@1.2.3 
+| | |   | `-- source-map@0.5.7 
+| | |   +-- js-yaml@3.7.0 
+| | |   | `-- esprima@2.7.3 
+| | |   +-- sax@1.2.4 
+| | |   `-- whet.extend@0.9.9 
+| | +-- postcss-unique-selectors@2.0.2 
+| | `-- postcss-zindex@2.2.0 
+| +-- postcss-modules-extract-imports@1.0.0-beta2 
+| +-- postcss-modules-local-by-default@1.0.0-beta1 
+| +-- postcss-modules-scope@1.0.0-beta2 
+| `-- source-list-map@0.1.8 
++-- eslint@1.10.3 
+| +-- concat-stream@1.6.0 
+| | +-- readable-stream@2.3.3 
+| | | +-- core-util-is@1.0.2 
+| | | +-- isarray@1.0.0 
+| | | +-- process-nextick-args@1.0.7 
+| | | +-- string_decoder@1.0.3 
+| | | `-- util-deprecate@1.0.2 
+| | `-- typedarray@0.0.6 
+| +-- doctrine@0.7.2 
+| | +-- esutils@1.1.6 
+| | `-- isarray@0.0.1 
+| +-- escape-string-regexp@1.0.5 
+| +-- escope@3.6.0 
+| | +-- es6-map@0.1.5 
+| | | +-- d@1.0.0 
+| | | +-- es5-ext@0.10.35 
+| | | +-- es6-iterator@2.0.3 
+| | | +-- es6-set@0.1.5 
+| | | +-- es6-symbol@3.1.1 
+| | | `-- event-emitter@0.3.5 
+| | +-- es6-weak-map@2.0.2 
+| | `-- esrecurse@4.2.0 
+| |   `-- object-assign@4.1.1 
+| +-- espree@2.2.5 
+| +-- estraverse@4.2.0 
+| +-- estraverse-fb@1.3.2 
+| +-- file-entry-cache@1.3.1 
+| | +-- flat-cache@1.3.0 
+| | | +-- circular-json@0.3.3 
+| | | +-- del@2.2.2 
+| | | | +-- globby@5.0.0 
+| | | | | +-- array-union@1.0.2 
+| | | | | | `-- array-uniq@1.0.3 
+| | | | | +-- arrify@1.0.1 
+| | | | | +-- glob@7.1.2 
+| | | | | `-- object-assign@4.1.1 
+| | | | +-- is-path-cwd@1.0.0 
+| | | | +-- is-path-in-cwd@1.0.0 
+| | | | | `-- is-path-inside@1.0.0 
+| | | | +-- object-assign@4.1.1 
+| | | | +-- pify@2.3.0 
+| | | | `-- pinkie-promise@2.0.1 
+| | | |   `-- pinkie@2.0.4 
+| | | `-- write@0.2.1 
+| | `-- object-assign@4.1.1 
+| +-- globals@8.18.0 
+| +-- handlebars@4.0.11 
+| | +-- source-map@0.4.4 
+| | `-- uglify-js@2.8.29 
+| |   +-- source-map@0.5.7 
+| |   `-- yargs@3.10.0 
+| |     `-- window-size@0.1.0 
+| +-- inquirer@0.11.4 
+| | +-- ansi-escapes@1.4.0 
+| | +-- ansi-regex@2.1.1 
+| | +-- cli-cursor@1.0.2 
+| | | `-- restore-cursor@1.0.1 
+| | |   +-- exit-hook@1.1.1 
+| | |   `-- onetime@1.1.0 
+| | +-- cli-width@1.1.1 
+| | +-- figures@1.7.0 
+| | | `-- object-assign@4.1.1 
+| | +-- readline2@1.0.1 
+| | | +-- code-point-at@1.1.0 
+| | | +-- is-fullwidth-code-point@1.0.0 
+| | | `-- mute-stream@0.0.5 
+| | +-- run-async@0.1.0 
+| | +-- rx-lite@3.1.2 
+| | `-- string-width@1.0.2 
+| +-- is-my-json-valid@2.16.1 
+| | +-- generate-function@2.0.0 
+| | +-- generate-object-property@1.2.0 
+| | | `-- is-property@1.0.2 
+| | +-- jsonpointer@4.0.1 
+| | `-- xtend@4.0.1 
+| +-- is-resolvable@1.0.0 
+| | `-- tryit@1.0.3 
+| +-- js-yaml@3.4.5 
+| | +-- argparse@1.0.9 
+| | | `-- sprintf-js@1.0.3 
+| | `-- esprima@2.7.3 
+| +-- json-stable-stringify@1.0.1 
+| | `-- jsonify@0.0.0 
+| +-- lodash.clonedeep@3.0.2 
+| | `-- lodash._baseclone@3.3.0 
+| +-- lodash.merge@3.3.2 
+| | +-- lodash._arraycopy@3.0.0 
+| | +-- lodash._arrayeach@3.0.0 
+| | +-- lodash._getnative@3.9.1 
+| | +-- lodash.isarguments@3.1.0 
+| | +-- lodash.isarray@3.0.4 
+| | +-- lodash.isplainobject@3.2.0 
+| | +-- lodash.istypedarray@3.0.6 
+| | +-- lodash.keysin@3.0.8 
+| | `-- lodash.toplainobject@3.0.0 
+| +-- lodash.omit@3.1.0 
+| | +-- lodash._arraymap@3.0.0 
+| | `-- lodash._basedifference@3.0.3 
+| |   +-- lodash._baseindexof@3.1.0 
+| |   +-- lodash._cacheindexof@3.0.2 
+| |   `-- lodash._createcache@3.1.2 
+| +-- minimatch@3.0.4 
+| +-- mkdirp@0.5.1 
+| | `-- minimist@0.0.8 
+| +-- object-assign@4.1.1 
+| +-- optionator@0.6.0 
+| | +-- deep-is@0.1.3 
+| | +-- fast-levenshtein@1.0.7 
+| | +-- levn@0.2.5 
+| | +-- prelude-ls@1.1.2 
+| | +-- type-check@0.3.2 
+| | `-- wordwrap@0.0.2 
+| +-- path-is-inside@1.0.2 
+| +-- shelljs@0.5.3 
+| +-- strip-json-comments@1.0.4 
+| +-- text-table@0.2.0 
+| +-- user-home@2.0.0 
+| | `-- os-homedir@1.0.2 
+| `-- xml-escape@1.0.0 
++-- eslint-plugin-react@3.16.1 
++-- file-loader@0.8.5 
++-- gh-pages@0.4.0 
+| +-- async@0.2.9 
+| +-- commander@2.8.1 
+| | `-- graceful-readlink@1.0.1 
+| +-- glob@4.0.6 
+| | +-- graceful-fs@3.0.11 
+| | | `-- natives@1.1.0 
+| | `-- minimatch@1.0.0 
+| |   +-- lru-cache@2.7.3 
+| |   `-- sigmund@1.0.1 
+| +-- graceful-fs@2.0.1 
+| +-- lodash@2.4.2 
+| +-- q@1.0.1 
+| +-- q-io@1.11.6 
+| | +-- collections@0.2.2 
+| | | `-- weak-map@1.0.0 
+| | +-- mime@1.4.1 
+| | +-- mimeparse@0.1.4 
+| | +-- q@1.5.1 
+| | +-- qs@1.2.2 
+| | `-- url2@0.0.0 
+| `-- wrench@1.5.1 
++-- html-webpack-plugin@1.7.0 
+| +-- bluebird@3.5.1 
+| +-- blueimp-tmpl@2.5.7 
+| `-- html-minifier@1.5.0 
+|   +-- change-case@2.3.1 
+|   | +-- camel-case@1.2.2 
+|   | +-- constant-case@1.1.2 
+|   | +-- dot-case@1.1.2 
+|   | +-- is-lower-case@1.1.3 
+|   | +-- is-upper-case@1.1.2 
+|   | +-- lower-case@1.1.4 
+|   | +-- lower-case-first@1.0.2 
+|   | +-- param-case@1.1.2 
+|   | +-- pascal-case@1.1.2 
+|   | +-- path-case@1.1.2 
+|   | +-- sentence-case@1.1.3 
+|   | +-- snake-case@1.1.2 
+|   | +-- swap-case@1.1.2 
+|   | +-- title-case@1.1.2 
+|   | +-- upper-case@1.1.3 
+|   | `-- upper-case-first@1.1.2 
+|   +-- clean-css@3.4.28 
+|   | `-- commander@2.8.1 
+|   +-- commander@2.9.0 
+|   +-- concat-stream@1.5.2 
+|   | `-- readable-stream@2.0.6 
+|   |   `-- string_decoder@0.10.31 
+|   +-- he@1.0.0 
+|   +-- ncname@1.0.0 
+|   | `-- xml-char-classes@1.0.0 
+|   +-- relateurl@0.2.7 
+|   `-- uglify-js@2.6.4 
+|     +-- async@0.2.10 
+|     +-- source-map@0.5.7 
+|     `-- yargs@3.10.0 
+|       `-- window-size@0.1.0 
++-- mocha@2.5.3 
+| +-- commander@2.3.0 
+| +-- debug@2.2.0 
+| | `-- ms@0.7.1 
+| +-- diff@1.4.0 
+| +-- escape-string-regexp@1.0.2 
+| +-- glob@3.2.11 
+| | `-- minimatch@0.3.0 
+| +-- growl@1.9.2 
+| +-- jade@0.26.3 
+| | +-- commander@0.6.1 
+| | `-- mkdirp@0.3.0 
+| +-- supports-color@1.2.0 
+| `-- to-iso-string@0.0.2 
++-- mocha-loader@0.7.1 
+| +-- css-loader@0.9.1 
+| | +-- csso@1.3.12 
+| | `-- source-map@0.1.43 
+| +-- script-loader@0.6.1 
+| | `-- raw-loader@0.5.1 
+| `-- style-loader@0.8.3 
++-- node-sass@3.13.1 
+| +-- async-foreach@0.1.3 
+| +-- cross-spawn@3.0.1 
+| | +-- lru-cache@4.1.1 
+| | | +-- pseudomap@1.0.2 
+| | | `-- yallist@2.1.2 
+| | `-- which@1.3.0 
+| |   `-- isexe@2.0.0 
+| +-- gaze@1.1.2 
+| | `-- globule@1.2.0 
+| |   +-- glob@7.1.2 
+| |   `-- lodash@4.17.4 
+| +-- get-stdin@4.0.1 
+| +-- glob@7.1.2 
+| | `-- fs.realpath@1.0.0 
+| +-- in-publish@2.0.0 
+| +-- lodash.assign@4.2.0 
+| +-- lodash.clonedeep@4.5.0 
+| +-- meow@3.7.0 
+| | +-- camelcase-keys@2.1.0 
+| | | `-- camelcase@2.1.1 
+| | +-- loud-rejection@1.6.0 
+| | | +-- currently-unhandled@0.4.1 
+| | | | `-- array-find-index@1.0.2 
+| | | `-- signal-exit@3.0.2 
+| | +-- map-obj@1.0.1 
+| | +-- minimist@1.2.0 
+| | +-- normalize-package-data@2.4.0 
+| | | +-- hosted-git-info@2.5.0 
+| | | +-- is-builtin-module@1.0.0 
+| | | | `-- builtin-modules@1.1.1 
+| | | +-- semver@5.4.1 
+| | | `-- validate-npm-package-license@3.0.1 
+| | |   +-- spdx-correct@1.0.2 
+| | |   | `-- spdx-license-ids@1.2.2 
+| | |   `-- spdx-expression-parse@1.0.4 
+| | +-- object-assign@4.1.1 
+| | +-- read-pkg-up@1.0.1 
+| | | +-- find-up@1.1.2 
+| | | | `-- path-exists@2.1.0 
+| | | `-- read-pkg@1.1.0 
+| | |   +-- load-json-file@1.1.0 
+| | |   | +-- parse-json@2.2.0 
+| | |   | | `-- error-ex@1.3.1 
+| | |   | |   `-- is-arrayish@0.2.1 
+| | |   | `-- strip-bom@2.0.0 
+| | |   |   `-- is-utf8@0.2.1 
+| | |   `-- path-type@1.1.0 
+| | +-- redent@1.0.0 
+| | | +-- indent-string@2.1.0 
+| | | | `-- repeating@2.0.1 
+| | | `-- strip-indent@1.0.1 
+| | `-- trim-newlines@1.0.0 
+| +-- nan@2.7.0 
+| +-- node-gyp@3.6.2 
+| | +-- fstream@1.0.11 
+| | +-- glob@7.1.2 
+| | +-- nopt@3.0.6 
+| | | `-- abbrev@1.1.1 
+| | +-- osenv@0.1.4 
+| | +-- semver@5.3.0 
+| | `-- tar@2.2.1 
+| |   `-- block-stream@0.0.9 
+| +-- npmlog@4.1.2 
+| | +-- are-we-there-yet@1.1.4 
+| | | `-- delegates@1.0.0 
+| | +-- console-control-strings@1.1.0 
+| | +-- gauge@2.7.4 
+| | | +-- aproba@1.2.0 
+| | | +-- has-unicode@2.0.1 
+| | | +-- object-assign@4.1.1 
+| | | `-- wide-align@1.1.2 
+| | `-- set-blocking@2.0.0 
+| +-- request@2.83.0 
+| | +-- aws-sign2@0.7.0 
+| | +-- aws4@1.6.0 
+| | +-- caseless@0.12.0 
+| | +-- combined-stream@1.0.5 
+| | | `-- delayed-stream@1.0.0 
+| | +-- extend@3.0.1 
+| | +-- forever-agent@0.6.1 
+| | +-- form-data@2.3.1 
+| | | `-- asynckit@0.4.0 
+| | +-- har-validator@5.0.3 
+| | | +-- ajv@5.3.0 
+| | | | +-- co@4.6.0 
+| | | | +-- fast-deep-equal@1.0.0 
+| | | | +-- fast-json-stable-stringify@2.0.0 
+| | | | `-- json-schema-traverse@0.3.1 
+| | | `-- har-schema@2.0.0 
+| | +-- hawk@6.0.2 
+| | | +-- boom@4.3.1 
+| | | +-- cryptiles@3.1.2 
+| | | | `-- boom@5.2.0 
+| | | +-- hoek@4.2.0 
+| | | `-- sntp@2.1.0 
+| | +-- http-signature@1.2.0 
+| | | +-- assert-plus@1.0.0 
+| | | +-- jsprim@1.4.1 
+| | | | +-- extsprintf@1.3.0 
+| | | | +-- json-schema@0.2.3 
+| | | | `-- verror@1.10.0 
+| | | `-- sshpk@1.13.1 
+| | |   +-- asn1@0.2.3 
+| | |   +-- bcrypt-pbkdf@1.0.1 
+| | |   +-- dashdash@1.14.1 
+| | |   +-- ecc-jsbn@0.1.1 
+| | |   +-- getpass@0.1.7 
+| | |   +-- jsbn@0.1.1 
+| | |   `-- tweetnacl@0.14.5 
+| | +-- is-typedarray@1.0.0 
+| | +-- isstream@0.1.2 
+| | +-- json-stringify-safe@5.0.1 
+| | +-- mime-types@2.1.17 
+| | | `-- mime-db@1.30.0 
+| | +-- oauth-sign@0.8.2 
+| | +-- performance-now@2.1.0 
+| | +-- qs@6.5.1 
+| | +-- safe-buffer@5.1.1 
+| | +-- stringstream@0.0.5 
+| | +-- tough-cookie@2.3.3 
+| | +-- tunnel-agent@0.6.0 
+| | `-- uuid@3.1.0 
+| `-- sass-graph@2.2.4 
+|   +-- glob@7.1.2 
+|   +-- lodash@4.17.4 
+|   +-- scss-tokenizer@0.2.3 
+|   `-- yargs@7.1.0 
+|     +-- camelcase@3.0.0 
+|     +-- cliui@3.2.0 
+|     | `-- wrap-ansi@2.1.0 
+|     +-- get-caller-file@1.0.2 
+|     +-- os-locale@1.4.0 
+|     | `-- lcid@1.0.0 
+|     |   `-- invert-kv@1.0.0 
+|     +-- require-directory@2.1.1 
+|     +-- require-main-filename@1.0.1 
+|     +-- which-module@1.0.0 
+|     +-- y18n@3.2.1 
+|     `-- yargs-parser@5.0.0 
+|       `-- camelcase@3.0.0 
++-- normalize.css@3.0.3 
++-- postcss-loader@0.6.0 
++-- react@0.14.9 
+| +-- envify@3.4.1 
+| | `-- jstransform@11.0.3 
+| |   +-- base62@1.2.0 
+| |   +-- esprima-fb@15001.1.0-dev-harmony-fb 
+| |   `-- object-assign@2.1.1 
+| `-- fbjs@0.6.1 
+|   +-- loose-envify@1.3.1 
+|   | `-- js-tokens@3.0.2 
+|   +-- promise@7.3.1 
+|   | `-- asap@2.0.6 
+|   +-- ua-parser-js@0.7.17 
+|   `-- whatwg-fetch@0.9.0 
++-- react-addons-test-utils@0.14.8 
++-- react-dom@0.14.9 
++-- sass-loader@3.2.3 
+| +-- async@1.5.2 
+| `-- object-assign@4.1.1 
++-- style-loader@0.12.4 
++-- url-loader@0.5.9 
+| +-- loader-utils@1.1.0 
+| | `-- json5@0.5.1 
+| `-- mime@1.3.6 
++-- webpack@1.15.0 
+| +-- acorn@3.3.0 
+| +-- clone@1.0.2 
+| +-- enhanced-resolve@0.9.1 
+| | `-- memory-fs@0.2.0 
+| +-- interpret@0.6.6 
+| +-- memory-fs@0.3.0 
+| | `-- errno@0.1.4 
+| |   `-- prr@0.0.0 
+| +-- node-libs-browser@0.7.0 
+| | +-- assert@1.4.1 
+| | +-- browserify-zlib@0.1.4 
+| | | `-- pako@0.2.9 
+| | +-- buffer@4.9.1 
+| | | +-- base64-js@1.2.1 
+| | | `-- ieee754@1.1.8 
+| | +-- console-browserify@1.1.0 
+| | | `-- date-now@0.1.4 
+| | +-- constants-browserify@1.0.0 
+| | +-- crypto-browserify@3.3.0 
+| | | +-- browserify-aes@0.4.0 
+| | | +-- pbkdf2-compat@2.0.1 
+| | | +-- ripemd160@0.2.0 
+| | | `-- sha.js@2.2.6 
+| | +-- domain-browser@1.1.7 
+| | +-- events@1.1.1 
+| | +-- https-browserify@0.0.1 
+| | +-- os-browserify@0.2.1 
+| | +-- path-browserify@0.0.0 
+| | +-- process@0.11.10 
+| | +-- punycode@1.4.1 
+| | +-- querystring-es3@0.2.1 
+| | +-- stream-browserify@2.0.1 
+| | +-- stream-http@2.7.2 
+| | | +-- builtin-status-codes@3.0.0 
+| | | `-- to-arraybuffer@1.0.1 
+| | +-- string_decoder@0.10.31 
+| | +-- timers-browserify@2.0.4 
+| | | `-- setimmediate@1.0.5 
+| | +-- tty-browserify@0.0.0 
+| | +-- url@0.11.0 
+| | | +-- punycode@1.3.2 
+| | | `-- querystring@0.2.0 
+| | +-- util@0.10.3 
+| | | `-- inherits@2.0.1 
+| | `-- vm-browserify@0.0.4 
+| |   `-- indexof@0.0.1 
+| +-- optimist@0.6.1 
+| +-- supports-color@3.2.3 
+| | `-- has-flag@1.0.0 
+| +-- tapable@0.1.10 
+| +-- uglify-js@2.7.5 
+| | +-- async@0.2.10 
+| | +-- source-map@0.5.7 
+| | +-- uglify-to-browserify@1.0.2 
+| | `-- yargs@3.10.0 
+| |   +-- camelcase@1.2.1 
+| |   +-- cliui@2.1.0 
+| |   | +-- center-align@0.1.3 
+| |   | | +-- align-text@0.1.4 
+| |   | | | +-- longest@1.0.1 
+| |   | | | `-- repeat-string@1.6.1 
+| |   | | `-- lazy-cache@1.0.4 
+| |   | `-- right-align@0.1.3 
+| |   `-- window-size@0.1.0 
+| +-- watchpack@0.2.9 
+| | `-- async@0.9.2 
+| `-- webpack-core@0.6.9 
+`-- webpack-dev-server@1.16.5 
+  +-- compression@1.7.1 
+  | +-- accepts@1.3.4 
+  | | `-- negotiator@0.6.1 
+  | +-- bytes@3.0.0 
+  | +-- compressible@2.0.12 
+  | +-- on-headers@1.0.1 
+  | `-- vary@1.1.2 
+  +-- connect-history-api-fallback@1.4.0 
+  +-- express@4.16.2 
+  | +-- array-flatten@1.1.1 
+  | +-- body-parser@1.18.2 
+  | | +-- qs@6.5.1 
+  | | `-- raw-body@2.3.2 
+  | +-- content-disposition@0.5.2 
+  | +-- content-type@1.0.4 
+  | +-- cookie@0.3.1 
+  | +-- cookie-signature@1.0.6 
+  | +-- depd@1.1.1 
+  | +-- encodeurl@1.0.1 
+  | +-- escape-html@1.0.3 
+  | +-- etag@1.8.1 
+  | +-- finalhandler@1.1.0 
+  | | `-- unpipe@1.0.0 
+  | +-- fresh@0.5.2 
+  | +-- merge-descriptors@1.0.1 
+  | +-- methods@1.1.2 
+  | +-- on-finished@2.3.0 
+  | | `-- ee-first@1.1.1 
+  | +-- parseurl@1.3.2 
+  | +-- path-to-regexp@0.1.7 
+  | +-- proxy-addr@2.0.2 
+  | | +-- forwarded@0.1.2 
+  | | `-- ipaddr.js@1.5.2 
+  | +-- qs@6.5.1 
+  | +-- range-parser@1.2.0 
+  | +-- send@0.16.1 
+  | | `-- destroy@1.0.4 
+  | +-- serve-static@1.13.1 
+  | +-- setprototypeof@1.1.0 
+  | +-- statuses@1.3.1 
+  | +-- type-is@1.6.15 
+  | | `-- media-typer@0.3.0 
+  | `-- utils-merge@1.0.1 
+  +-- http-proxy-middleware@0.17.4 
+  | +-- http-proxy@1.16.2 
+  | | +-- eventemitter3@1.2.0 
+  | | `-- requires-port@1.0.0 
+  | +-- is-glob@3.1.0 
+  | | `-- is-extglob@2.1.1 
+  | +-- lodash@4.17.4 
+  | `-- micromatch@2.3.11 
+  |   +-- arr-diff@2.0.0 
+  |   | `-- arr-flatten@1.1.0 
+  |   +-- array-unique@0.2.1 
+  |   +-- braces@1.8.5 
+  |   | +-- expand-range@1.8.2 
+  |   | | `-- fill-range@2.2.3 
+  |   | |   +-- is-number@2.1.0 
+  |   | |   +-- isobject@2.1.0 
+  |   | |   `-- randomatic@1.1.7 
+  |   | |     +-- is-number@3.0.0 
+  |   | |     | `-- kind-of@3.2.2 
+  |   | |     `-- kind-of@4.0.0 
+  |   | +-- preserve@0.2.0 
+  |   | `-- repeat-element@1.1.2 
+  |   +-- expand-brackets@0.1.5 
+  |   | `-- is-posix-bracket@0.1.1 
+  |   +-- extglob@0.3.2 
+  |   +-- filename-regex@2.0.1 
+  |   +-- kind-of@3.2.2 
+  |   | `-- is-buffer@1.1.6 
+  |   +-- object.omit@2.0.1 
+  |   | +-- for-own@0.1.5 
+  |   | | `-- for-in@1.0.2 
+  |   | `-- is-extendable@0.1.1 
+  |   +-- parse-glob@3.0.4 
+  |   | +-- glob-base@0.3.0 
+  |   | `-- is-dotfile@1.0.3 
+  |   `-- regex-cache@0.4.4 
+  |     `-- is-equal-shallow@0.1.3 
+  |       `-- is-primitive@2.0.0 
+  +-- open@0.0.5 
+  +-- serve-index@1.9.1 
+  | +-- batch@0.6.1 
+  | `-- http-errors@1.6.2 
+  |   `-- setprototypeof@1.0.3 
+  +-- sockjs@0.3.19 
+  | `-- faye-websocket@0.10.0 
+  |   `-- websocket-driver@0.7.0 
+  |     +-- http-parser-js@0.4.9 
+  |     `-- websocket-extensions@0.1.2 
+  +-- sockjs-client@1.1.4 
+  | +-- eventsource@0.1.6 
+  | | `-- original@1.0.0 
+  | |   `-- url-parse@1.0.5 
+  | |     `-- querystringify@0.0.4 
+  | +-- faye-websocket@0.11.1 
+  | +-- json3@3.3.2 
+  | `-- url-parse@1.2.0 
+  |   `-- querystringify@1.0.0 
+  +-- stream-cache@0.0.2 
+  +-- strip-ansi@3.0.1 
+  `-- webpack-dev-middleware@1.12.0 
+    +-- memory-fs@0.4.1 
+    `-- time-stamp@2.0.0 
+
+[91mnpm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[0m[91m+ sed -i.tmp 's:if(this.disableHostCheck) return true:return true:' /react-tic-tac-toe/node_modules/webpack-dev-server/lib/Server.js
+[0m[91m+ dnf clean all
+[0m18 files removed
+[91m+ exit
+[0m ---> b96a424ab81c
+Removing intermediate container eb865a4ea517
+Step 6 : WORKDIR /react-tic-tac-toe
+ ---> Running in 03af3653beb3
+ ---> 1608b96db13f
+Removing intermediate container 03af3653beb3
+Step 7 : EXPOSE 8080
+ ---> Running in 719135aa7fdf
+ ---> 4ba9bc5c9a81
+Removing intermediate container 719135aa7fdf
+Step 8 : ENTRYPOINT npm start
+ ---> Running in 27ec55feaf0e
+ ---> 165cf5639720
+Removing intermediate container 27ec55feaf0e
+Successfully built 165cf5639720
