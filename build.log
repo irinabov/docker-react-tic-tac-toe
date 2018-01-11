@@ -1,25 +1,24 @@
-Sending build context to Docker daemon 87.55 kB
+Sending build context to Docker daemon 121.3 kB
 Step 1 : FROM fedora:latest
  ---> 422dc563ca32
 Step 2 : ENV NAME docker-react-tic-tac-toe
- ---> Using cache
- ---> 6598a8bbba2b
+ ---> Running in 7b37bb595b6c
+ ---> 17cfe214a033
+Removing intermediate container 7b37bb595b6c
 Step 3 : LABEL maintainer "Irina Boverman <irina.boverman@gmail.com>" summary "Docker image for react-tic-tac-toe." name "irinabov/$NAME"
- ---> Using cache
- ---> 043af1ebdabf
+ ---> Running in ca20e01627ef
+ ---> 3da623280fa3
+Removing intermediate container ca20e01627ef
 Step 4 : COPY ./build.sh /
- ---> efb84c9d2682
-Removing intermediate container 3103b53cddc4
-Step 5 : COPY ./start.sh /
- ---> 57ffbee2e473
-Removing intermediate container c7fdacf53b40
-Step 6 : RUN ./build.sh
- ---> Running in 34ed83a8d3f4
+ ---> 09673bfbfeac
+Removing intermediate container 60f4e7dc4e92
+Step 5 : RUN ./build.sh
+ ---> Running in 4d06c25ca3f6
 [91m+ home=/
-+ dnf -y update
-[0mFedora 27 - x86_64 - Updates                    3.9 MB/s |  15 MB     00:03    
-Fedora 27 - x86_64                              4.0 MB/s |  58 MB     00:14    
-Last metadata expiration check: 0:00:08 ago on Wed Jan 10 21:03:16 2018.
+[0m[91m+ dnf -y update
+[0mFedora 27 - x86_64 - Updates                    1.5 MB/s |  16 MB     00:10    
+Fedora 27 - x86_64                              1.2 MB/s |  58 MB     00:46    
+Last metadata expiration check: 0:00:11 ago on Thu Jan 11 15:23:52 2018.
 Dependencies resolved.
 ================================================================================
  Package                  Arch    Version                        Repository
@@ -103,78 +102,78 @@ Upgrade  70 Packages
 
 Total download size: 46 M
 Downloading Packages:
-(1/70): ca-certificates-2017.2.20-1.0.fc27.noar 321 kB/s | 406 kB     00:01    
-(2/70): bash-4.4.12-13.fc27.x86_64.rpm          1.0 MB/s | 1.5 MB     00:01    
-(3/70): audit-libs-2.8.2-1.fc27.x86_64.rpm       74 kB/s | 111 kB     00:01    
-(4/70): compat-openssl10-1.0.2m-1.fc27.x86_64.r 1.6 MB/s | 1.1 MB     00:00    
-(5/70): crypto-policies-20170816-2.gite0a4066.f 189 kB/s |  37 kB     00:00    
-(6/70): coreutils-common-8.27-17.fc27.x86_64.rp 2.2 MB/s | 1.9 MB     00:00    
-(7/70): curl-7.55.1-8.fc27.x86_64.rpm           946 kB/s | 311 kB     00:00    
-(8/70): libcurl-7.55.1-8.fc27.x86_64.rpm        2.2 MB/s | 272 kB     00:00    
-(9/70): dbus-1.12.0-1.fc27.x86_64.rpm           1.3 MB/s | 266 kB     00:00    
-(10/70): dbus-libs-1.12.0-1.fc27.x86_64.rpm     1.1 MB/s | 178 kB     00:00    
-(11/70): device-mapper-1.02.144-1.fc27.x86_64.r 1.3 MB/s | 357 kB     00:00    
-(12/70): openssl-libs-1.1.0g-1.fc27.x86_64.rpm  1.4 MB/s | 1.3 MB     00:00    
-(13/70): device-mapper-libs-1.02.144-1.fc27.x86 1.7 MB/s | 390 kB     00:00    
-(14/70): coreutils-8.27-17.fc27.x86_64.rpm      573 kB/s | 1.2 MB     00:02    
-(15/70): python3-dnf-2.7.5-2.fc27.noarch.rpm    1.9 MB/s | 454 kB     00:00    
+(1/70): audit-libs-2.8.2-1.fc27.x86_64.rpm      171 kB/s | 111 kB     00:00    
+(2/70): ca-certificates-2017.2.20-1.0.fc27.noar 465 kB/s | 406 kB     00:00    
+(3/70): compat-openssl10-1.0.2m-1.fc27.x86_64.r 951 kB/s | 1.1 MB     00:01    
+(4/70): bash-4.4.12-13.fc27.x86_64.rpm          844 kB/s | 1.5 MB     00:01    
+(5/70): coreutils-8.27-17.fc27.x86_64.rpm       1.0 MB/s | 1.2 MB     00:01    
+(6/70): crypto-policies-20170816-2.gite0a4066.f 183 kB/s |  37 kB     00:00    
+(7/70): libcurl-7.55.1-8.fc27.x86_64.rpm        1.2 MB/s | 272 kB     00:00    
+(8/70): curl-7.55.1-8.fc27.x86_64.rpm           762 kB/s | 311 kB     00:00    
+(9/70): dbus-1.12.0-1.fc27.x86_64.rpm           1.2 MB/s | 266 kB     00:00    
+(10/70): dbus-libs-1.12.0-1.fc27.x86_64.rpm     409 kB/s | 178 kB     00:00    
+(11/70): coreutils-common-8.27-17.fc27.x86_64.r 1.5 MB/s | 1.9 MB     00:01    
+(12/70): openssl-libs-1.1.0g-1.fc27.x86_64.rpm  1.3 MB/s | 1.3 MB     00:01    
+(13/70): device-mapper-1.02.144-1.fc27.x86_64.r 1.0 MB/s | 357 kB     00:00    
+(14/70): device-mapper-libs-1.02.144-1.fc27.x86 1.6 MB/s | 390 kB     00:00    
+(15/70): dnf-conf-2.7.5-2.fc27.noarch.rpm       328 kB/s |  68 kB     00:00    
 (16/70): dnf-2.7.5-2.fc27.noarch.rpm            1.0 MB/s | 350 kB     00:00    
-(17/70): dnf-conf-2.7.5-2.fc27.noarch.rpm       579 kB/s |  68 kB     00:00    
-(18/70): dnf-yum-2.7.5-2.fc27.noarch.rpm        232 kB/s |  50 kB     00:00    
-(19/70): expat-2.2.5-1.fc27.x86_64.rpm          891 kB/s | 103 kB     00:00    
-(20/70): gdbm-1.14-1.fc27.x86_64.rpm            1.2 MB/s | 158 kB     00:00    
-(21/70): gawk-4.1.4-8.fc27.x86_64.rpm           762 kB/s | 1.1 MB     00:01    
-(22/70): glibc-2.26-21.fc27.x86_64.rpm          2.6 MB/s | 3.6 MB     00:01    
-(23/70): glibc-langpack-en-2.26-21.fc27.x86_64. 1.5 MB/s | 276 kB     00:00    
-(24/70): libcrypt-nss-2.26-21.fc27.x86_64.rpm   335 kB/s |  39 kB     00:00    
+(17/70): dnf-yum-2.7.5-2.fc27.noarch.rpm        447 kB/s |  50 kB     00:00    
+(18/70): expat-2.2.5-1.fc27.x86_64.rpm          488 kB/s | 103 kB     00:00    
+(19/70): python3-dnf-2.7.5-2.fc27.noarch.rpm    1.0 MB/s | 454 kB     00:00    
+(20/70): gdbm-1.14-1.fc27.x86_64.rpm            724 kB/s | 158 kB     00:00    
+(21/70): gawk-4.1.4-8.fc27.x86_64.rpm           1.6 MB/s | 1.1 MB     00:00    
+(22/70): glibc-common-2.26-21.fc27.x86_64.rpm   1.8 MB/s | 844 kB     00:00    
+(23/70): glibc-langpack-en-2.26-21.fc27.x86_64. 1.1 MB/s | 276 kB     00:00    
+(24/70): libcrypt-nss-2.26-21.fc27.x86_64.rpm   246 kB/s |  39 kB     00:00    
 (25/70): glib2-2.54.2-1.fc27.x86_64.rpm         1.1 MB/s | 2.4 MB     00:02    
-(26/70): glibc-common-2.26-21.fc27.x86_64.rpm   770 kB/s | 844 kB     00:01    
-(27/70): gnupg2-smime-2.2.3-1.fc27.x86_64.rpm   676 kB/s | 276 kB     00:00    
-(28/70): ima-evm-utils-1.0-2.fc27.x86_64.rpm    421 kB/s |  56 kB     00:00    
-(29/70): gnupg2-2.2.3-1.fc27.x86_64.rpm         1.8 MB/s | 2.3 MB     00:01    
-(30/70): info-6.4-6.fc27.x86_64.rpm             551 kB/s | 192 kB     00:00    
-(31/70): gnutls-3.5.16-4.fc27.x86_64.rpm        671 kB/s | 761 kB     00:01    
-(32/70): krb5-libs-1.15.2-4.fc27.x86_64.rpm     1.2 MB/s | 809 kB     00:00    
-(33/70): libdb-utils-5.3.28-27.fc27.x86_64.rpm  620 kB/s | 144 kB     00:00    
-(34/70): libdnf-0.11.1-1.fc27.x86_64.rpm        625 kB/s | 132 kB     00:00    
-(35/70): python3-hawkey-0.11.1-1.fc27.x86_64.rp 287 kB/s |  57 kB     00:00    
-(36/70): libreport-filesystem-2.9.3-1.fc27.x86_ 147 kB/s |  16 kB     00:00    
-(37/70): libdb-5.3.28-27.fc27.x86_64.rpm        683 kB/s | 753 kB     00:01    
-(38/70): libgcrypt-1.8.1-3.fc27.x86_64.rpm      1.0 MB/s | 453 kB     00:00    
-(39/70): libselinux-2.7-3.fc27.x86_64.rpm       512 kB/s | 173 kB     00:00    
-(40/70): libsepol-2.7-2.fc27.x86_64.rpm         750 kB/s | 332 kB     00:00    
-(41/70): libsemanage-2.7-2.fc27.x86_64.rpm      484 kB/s | 156 kB     00:00    
-(42/70): libsss_nss_idmap-1.16.0-5.fc27.x86_64. 816 kB/s |  94 kB     00:00    
-(43/70): libsss_idmap-1.16.0-5.fc27.x86_64.rpm  397 kB/s |  87 kB     00:00    
-(44/70): libzstd-1.3.3-1.fc27.x86_64.rpm        935 kB/s | 207 kB     00:00    
-(45/70): lua-libs-5.3.4-7.fc27.x86_64.rpm       521 kB/s | 116 kB     00:00    
-(46/70): libsolv-0.6.30-2.fc27.x86_64.rpm       552 kB/s | 368 kB     00:00    
-(47/70): nettle-3.4-1.fc27.x86_64.rpm           886 kB/s | 292 kB     00:00    
-(48/70): nss-util-3.34.0-1.0.fc27.x86_64.rpm    344 kB/s |  89 kB     00:00    
-(49/70): nss-softokn-3.34.0-1.0.fc27.x86_64.rpm 563 kB/s | 391 kB     00:00    
-(50/70): nss-softokn-freebl-3.34.0-1.0.fc27.x86 711 kB/s | 235 kB     00:00    
-(51/70): nss-sysinit-3.34.0-1.0.fc27.x86_64.rpm 378 kB/s |  63 kB     00:00    
-(52/70): nss-3.34.0-1.0.fc27.x86_64.rpm         752 kB/s | 856 kB     00:01    
-(53/70): nss-pem-1.0.3-6.fc27.x86_64.rpm        500 kB/s |  77 kB     00:00    
-(54/70): p11-kit-0.23.9-2.fc27.x86_64.rpm       793 kB/s | 263 kB     00:00    
-(55/70): openldap-2.4.45-4.fc27.x86_64.rpm      660 kB/s | 360 kB     00:00    
-(56/70): p11-kit-trust-0.23.9-2.fc27.x86_64.rpm 605 kB/s | 134 kB     00:00    
-(57/70): nss-tools-3.34.0-1.0.fc27.x86_64.rpm   472 kB/s | 519 kB     00:01    
-(58/70): pcre-8.41-3.fc27.x86_64.rpm            621 kB/s | 204 kB     00:00    
-(59/70): publicsuffix-list-dafsa-20171228-1.fc2 414 kB/s |  46 kB     00:00    
-(60/70): pcre2-10.30-4.fc27.x86_64.rpm          704 kB/s | 234 kB     00:00    
-(61/70): python3-3.6.3-2.fc27.x86_64.rpm        586 kB/s |  68 kB     00:00    
-(62/70): python3-setuptools-37.0.0-1.fc27.noarc 751 kB/s | 604 kB     00:00    
-(63/70): sssd-client-1.16.0-5.fc27.x86_64.rpm   522 kB/s | 143 kB     00:00    
-(64/70): python3-pip-9.0.1-14.fc27.noarch.rpm   1.0 MB/s | 1.8 MB     00:01    
-(65/70): systemd-pam-234-9.fc27.x86_64.rpm      487 kB/s | 180 kB     00:00    
-(66/70): systemd-libs-234-9.fc27.x86_64.rpm     707 kB/s | 465 kB     00:00    
-(67/70): tzdata-2017c-1.fc27.noarch.rpm         760 kB/s | 444 kB     00:00    
-(68/70): vim-minimal-8.0.1427-1.fc27.x86_64.rpm 664 kB/s | 537 kB     00:00    
-(69/70): systemd-234-9.fc27.x86_64.rpm          958 kB/s | 3.5 MB     00:03    
-(70/70): python3-libs-3.6.3-2.fc27.x86_64.rpm   971 kB/s | 8.6 MB     00:09    
+(26/70): gnupg2-smime-2.2.3-1.fc27.x86_64.rpm   633 kB/s | 276 kB     00:00    
+(27/70): gnupg2-2.2.3-1.fc27.x86_64.rpm         1.6 MB/s | 2.3 MB     00:01    
+(28/70): ima-evm-utils-1.0-2.fc27.x86_64.rpm    496 kB/s |  56 kB     00:00    
+(29/70): info-6.4-6.fc27.x86_64.rpm             873 kB/s | 192 kB     00:00    
+(30/70): glibc-2.26-21.fc27.x86_64.rpm          1.2 MB/s | 3.6 MB     00:03    
+(31/70): gnutls-3.5.16-4.fc27.x86_64.rpm        844 kB/s | 761 kB     00:00    
+(32/70): krb5-libs-1.15.2-4.fc27.x86_64.rpm     1.4 MB/s | 809 kB     00:00    
+(33/70): libdb-utils-5.3.28-27.fc27.x86_64.rpm  650 kB/s | 144 kB     00:00    
+(34/70): libdnf-0.11.1-1.fc27.x86_64.rpm        632 kB/s | 132 kB     00:00    
+(35/70): libdb-5.3.28-27.fc27.x86_64.rpm        1.1 MB/s | 753 kB     00:00    
+(36/70): python3-hawkey-0.11.1-1.fc27.x86_64.rp 273 kB/s |  57 kB     00:00    
+(37/70): libreport-filesystem-2.9.3-1.fc27.x86_  81 kB/s |  16 kB     00:00    
+(38/70): libgcrypt-1.8.1-3.fc27.x86_64.rpm      1.3 MB/s | 453 kB     00:00    
+(39/70): libselinux-2.7-3.fc27.x86_64.rpm       774 kB/s | 173 kB     00:00    
+(40/70): libsemanage-2.7-2.fc27.x86_64.rpm      741 kB/s | 156 kB     00:00    
+(41/70): libsepol-2.7-2.fc27.x86_64.rpm         987 kB/s | 332 kB     00:00    
+(42/70): libsss_idmap-1.16.0-5.fc27.x86_64.rpm  768 kB/s |  87 kB     00:00    
+(43/70): libsss_nss_idmap-1.16.0-5.fc27.x86_64. 438 kB/s |  94 kB     00:00    
+(44/70): libsolv-0.6.30-2.fc27.x86_64.rpm       838 kB/s | 368 kB     00:00    
+(45/70): libzstd-1.3.3-1.fc27.x86_64.rpm        941 kB/s | 207 kB     00:00    
+(46/70): lua-libs-5.3.4-7.fc27.x86_64.rpm       996 kB/s | 116 kB     00:00    
+(47/70): nettle-3.4-1.fc27.x86_64.rpm           885 kB/s | 292 kB     00:00    
+(48/70): nss-softokn-3.34.0-1.0.fc27.x86_64.rpm 1.1 MB/s | 391 kB     00:00    
+(49/70): nss-util-3.34.0-1.0.fc27.x86_64.rpm    422 kB/s |  89 kB     00:00    
+(50/70): nss-3.34.0-1.0.fc27.x86_64.rpm         1.5 MB/s | 856 kB     00:00    
+(51/70): nss-softokn-freebl-3.34.0-1.0.fc27.x86 742 kB/s | 235 kB     00:00    
+(52/70): nss-sysinit-3.34.0-1.0.fc27.x86_64.rpm 321 kB/s |  63 kB     00:00    
+(53/70): nss-pem-1.0.3-6.fc27.x86_64.rpm        361 kB/s |  77 kB     00:00    
+(54/70): nss-tools-3.34.0-1.0.fc27.x86_64.rpm   941 kB/s | 519 kB     00:00    
+(55/70): openldap-2.4.45-4.fc27.x86_64.rpm      1.1 MB/s | 360 kB     00:00    
+(56/70): p11-kit-0.23.9-2.fc27.x86_64.rpm       1.1 MB/s | 263 kB     00:00    
+(57/70): p11-kit-trust-0.23.9-2.fc27.x86_64.rpm 606 kB/s | 134 kB     00:00    
+(58/70): pcre-8.41-3.fc27.x86_64.rpm            894 kB/s | 204 kB     00:00    
+(59/70): publicsuffix-list-dafsa-20171228-1.fc2 418 kB/s |  46 kB     00:00    
+(60/70): pcre2-10.30-4.fc27.x86_64.rpm          710 kB/s | 234 kB     00:00    
+(61/70): python3-3.6.3-2.fc27.x86_64.rpm        600 kB/s |  68 kB     00:00    
+(62/70): python3-setuptools-37.0.0-1.fc27.noarc 1.1 MB/s | 604 kB     00:00    
+(63/70): sssd-client-1.16.0-5.fc27.x86_64.rpm   652 kB/s | 143 kB     00:00    
+(64/70): python3-pip-9.0.1-14.fc27.noarch.rpm   974 kB/s | 1.8 MB     00:01    
+(65/70): systemd-pam-234-9.fc27.x86_64.rpm      552 kB/s | 180 kB     00:00    
+(66/70): systemd-libs-234-9.fc27.x86_64.rpm     738 kB/s | 465 kB     00:00    
+(67/70): tzdata-2017c-1.fc27.noarch.rpm         814 kB/s | 444 kB     00:00    
+(68/70): systemd-234-9.fc27.x86_64.rpm          1.1 MB/s | 3.5 MB     00:03    
+(69/70): vim-minimal-8.0.1427-1.fc27.x86_64.rpm 673 kB/s | 537 kB     00:00    
+(70/70): python3-libs-3.6.3-2.fc27.x86_64.rpm   725 kB/s | 8.6 MB     00:12    
 --------------------------------------------------------------------------------
-Total                                           2.2 MB/s |  46 MB     00:20     
+Total                                           2.0 MB/s |  46 MB     00:22     
 Running transaction check
 Transaction check succeeded.
 Running transaction test
@@ -644,7 +643,7 @@ Upgraded:
 
 Complete!
 [91m+ dnf -y install nodejs git sed python2 gcc-c++
-[0mLast metadata expiration check: 0:02:08 ago on Wed Jan 10 21:03:16 2018.
+[0mLast metadata expiration check: 0:02:37 ago on Thu Jan 11 15:23:52 2018.
 [91mPackage sed-4.4-3.fc27.x86_64 is already installed, skipping.
 [0mDependencies resolved.
 ================================================================================
@@ -735,81 +734,81 @@ Install  73 Packages
 Total download size: 102 M
 Installed size: 329 M
 Downloading Packages:
-(1/73): http-parser-2.7.1-7.fc27.x86_64.rpm      88 kB/s |  35 kB     00:00    
-(2/73): git-2.14.3-2.fc27.x86_64.rpm            632 kB/s | 1.1 MB     00:01    
-(3/73): git-core-doc-2.14.3-2.fc27.x86_64.rpm   1.0 MB/s | 2.3 MB     00:02    
-(4/73): perl-Git-2.14.3-2.fc27.noarch.rpm       107 kB/s |  68 kB     00:00    
-(5/73): perl-Error-0.17025-1.fc27.noarch.rpm    182 kB/s |  44 kB     00:00    
-(6/73): nodejs-8.9.3-2.fc27.x86_64.rpm          1.1 MB/s | 5.5 MB     00:05    
-(7/73): perl-Getopt-Long-2.50-3.fc27.noarch.rpm 162 kB/s |  61 kB     00:00    
-(8/73): perl-PathTools-3.67-395.fc27.x86_64.rpm 218 kB/s |  88 kB     00:00    
-(9/73): perl-TermReadKey-2.37-5.fc27.x86_64.rpm 144 kB/s |  38 kB     00:00    
-(10/73): less-487-5.fc27.x86_64.rpm             326 kB/s | 159 kB     00:00    
-(11/73): perl-Carp-1.42-394.fc27.noarch.rpm     115 kB/s |  28 kB     00:00    
-(12/73): git-core-2.14.3-2.fc27.x86_64.rpm      692 kB/s | 4.1 MB     00:06    
-(13/73): perl-Exporter-5.72-395.fc27.noarch.rpm 120 kB/s |  32 kB     00:00    
-(14/73): perl-Time-Local-1.250-394.fc27.noarch. 117 kB/s |  30 kB     00:00    
-(15/73): perl-Scalar-List-Utils-1.48-1.fc27.x86 200 kB/s |  65 kB     00:00    
-(16/73): perl-Pod-Usage-1.69-394.fc27.noarch.rp 129 kB/s |  33 kB     00:00    
-(17/73): perl-Text-ParseWords-3.30-394.fc27.noa  84 kB/s |  16 kB     00:00    
-(18/73): perl-constant-1.33-395.fc27.noarch.rpm 119 kB/s |  24 kB     00:00    
-(19/73): perl-File-Path-2.15-1.fc27.noarch.rpm  114 kB/s |  37 kB     00:00    
-(20/73): perl-interpreter-5.26.1-401.fc27.x86_6 2.8 MB/s | 6.2 MB     00:02    
-(21/73): perl-Text-Tabs+Wrap-2013.0523-394.fc27 117 kB/s |  23 kB     00:00    
-(22/73): perl-IO-1.38-401.fc27.x86_64.rpm       273 kB/s | 136 kB     00:00    
-(23/73): perl-Unicode-Normalize-1.25-395.fc27.x 237 kB/s |  80 kB     00:00    
-(24/73): perl-parent-0.236-394.fc27.noarch.rpm   91 kB/s |  18 kB     00:00    
-(25/73): perl-macros-5.26.1-401.fc27.x86_64.rpm 195 kB/s |  67 kB     00:00    
-(26/73): perl-threads-2.16-4.fc27.x86_64.rpm    221 kB/s |  59 kB     00:00    
-(27/73): perl-threads-shared-1.57-4.fc27.x86_64 171 kB/s |  46 kB     00:00    
-(28/73): perl-libs-5.26.1-401.fc27.x86_64.rpm   856 kB/s | 1.5 MB     00:01    
-(29/73): perl-Errno-1.28-401.fc27.x86_64.rpm    204 kB/s |  71 kB     00:00    
-(30/73): perl-Pod-Perldoc-3.28-395.fc27.noarch. 206 kB/s |  87 kB     00:00    
-(31/73): perl-Socket-2.024-5.fc27.x86_64.rpm    168 kB/s |  56 kB     00:00    
-(32/73): perl-File-Temp-0.230.400-394.fc27.noar 179 kB/s |  61 kB     00:00    
-(33/73): perl-HTTP-Tiny-0.070-394.fc27.noarch.r 162 kB/s |  56 kB     00:00    
-(34/73): perl-MIME-Base64-3.15-395.fc27.x86_64. 105 kB/s |  29 kB     00:00    
-(35/73): perl-Pod-Escapes-1.07-394.fc27.noarch.  86 kB/s |  19 kB     00:00    
-(36/73): perl-Pod-Simple-3.35-394.fc27.noarch.r 262 kB/s | 211 kB     00:00    
-(37/73): python2-2.7.14-4.fc27.x86_64.rpm       127 kB/s | 100 kB     00:00    
-(38/73): libmpc-1.0.2-8.fc27.x86_64.rpm         126 kB/s |  56 kB     00:00    
-(39/73): perl-podlators-4.09-395.fc27.noarch.rp 116 kB/s | 115 kB     00:00    
-(40/73): perl-Term-ANSIColor-4.06-395.fc27.noar 115 kB/s |  44 kB     00:00    
-(41/73): perl-Term-Cap-1.17-394.fc27.noarch.rpm  88 kB/s |  21 kB     00:00    
-(42/73): gcc-c++-7.2.1-2.fc27.x86_64.rpm        2.1 MB/s |  11 MB     00:05    
-(43/73): perl-Encode-2.93-15.fc27.x86_64.rpm    522 kB/s | 1.5 MB     00:02    
-(44/73): perl-Storable-2.62-395.fc27.x86_64.rpm 174 kB/s |  84 kB     00:00    
-(45/73): groff-base-1.22.3-12.fc27.x86_64.rpm   458 kB/s | 1.0 MB     00:02    
-(46/73): binutils-2.29-6.fc27.x86_64.rpm        1.8 MB/s | 5.9 MB     00:03    
-(47/73): python2-libs-2.7.14-4.fc27.x86_64.rpm  494 kB/s | 6.3 MB     00:13    
-(48/73): isl-0.16.1-3.fc27.x86_64.rpm           775 kB/s | 835 kB     00:01    
-(49/73): libgomp-7.2.1-2.fc27.x86_64.rpm        386 kB/s | 198 kB     00:00    
-(50/73): libstdc++-devel-7.2.1-2.fc27.x86_64.rp 1.7 MB/s | 1.9 MB     00:01    
-(51/73): gcc-7.2.1-2.fc27.x86_64.rpm            2.0 MB/s |  21 MB     00:10    
-(52/73): glibc-devel-2.26-21.fc27.x86_64.rpm    540 kB/s | 988 kB     00:01    
-(53/73): glibc-headers-2.26-21.fc27.x86_64.rpm  342 kB/s | 502 kB     00:01    
-(54/73): cpp-7.2.1-2.fc27.x86_64.rpm            1.1 MB/s | 9.2 MB     00:08    
-(55/73): python2-setuptools-37.0.0-1.fc27.noarc 374 kB/s | 606 kB     00:01    
-(56/73): python2-pip-9.0.1-14.fc27.noarch.rpm   735 kB/s | 1.8 MB     00:02    
-(57/73): libuv-1.16.0-1.fc27.x86_64.rpm         147 kB/s | 123 kB     00:00    
-(58/73): kernel-headers-4.14.11-300.fc27.x86_64 601 kB/s | 1.2 MB     00:02    
-(59/73): openssh-clients-7.6p1-3.fc27.x86_64.rp 396 kB/s | 671 kB     00:01    
-(60/73): fipscheck-lib-1.5.0-3.fc27.x86_64.rpm   77 kB/s |  14 kB     00:00    
-(61/73): libedit-3.1-20.20170329cvs.fc27.x86_64 220 kB/s |  99 kB     00:00    
-(62/73): fipscheck-1.5.0-3.fc27.x86_64.rpm      110 kB/s |  25 kB     00:00    
-(63/73): openssh-7.6p1-3.fc27.x86_64.rpm        354 kB/s | 501 kB     00:01    
-(64/73): perl-Mozilla-CA-20160104-6.fc27.noarch  91 kB/s |  14 kB     00:00    
-(65/73): perl-IO-Socket-SSL-2.051-1.fc27.noarch 384 kB/s | 271 kB     00:00    
-(66/73): libicu-57.1-9.fc27.x86_64.rpm          1.4 MB/s | 8.4 MB     00:05    
-(67/73): perl-IO-Socket-IP-0.39-4.fc27.noarch.r 119 kB/s |  45 kB     00:00    
-(68/73): openssl-1.1.0g-1.fc27.x86_64.rpm       267 kB/s | 564 kB     00:02    
-(69/73): perl-Net-SSLeay-1.81-4.fc27.x86_64.rpm 359 kB/s | 334 kB     00:00    
-(70/73): perl-URI-1.72-1.fc27.noarch.rpm        200 kB/s | 114 kB     00:00    
-(71/73): npm-5.5.1-1.8.9.3.2.fc27.x86_64.rpm    1.0 MB/s | 4.2 MB     00:04    
-(72/73): perl-Data-Dumper-2.167-397.fc27.x86_64  93 kB/s |  56 kB     00:00    
-(73/73): perl-libnet-3.11-1.fc27.noarch.rpm     158 kB/s | 119 kB     00:00    
+(1/73): http-parser-2.7.1-7.fc27.x86_64.rpm     111 kB/s |  35 kB     00:00    
+(2/73): git-2.14.3-2.fc27.x86_64.rpm            1.2 MB/s | 1.1 MB     00:00    
+(3/73): git-core-2.14.3-2.fc27.x86_64.rpm       2.7 MB/s | 4.1 MB     00:01    
+(4/73): perl-Git-2.14.3-2.fc27.noarch.rpm       1.0 MB/s |  68 kB     00:00    
+(5/73): git-core-doc-2.14.3-2.fc27.x86_64.rpm   2.0 MB/s | 2.3 MB     00:01    
+(6/73): perl-Error-0.17025-1.fc27.noarch.rpm    177 kB/s |  44 kB     00:00    
+(7/73): perl-Getopt-Long-2.50-3.fc27.noarch.rpm 262 kB/s |  61 kB     00:00    
+(8/73): perl-PathTools-3.67-395.fc27.x86_64.rpm 386 kB/s |  88 kB     00:00    
+(9/73): perl-TermReadKey-2.37-5.fc27.x86_64.rpm 282 kB/s |  38 kB     00:00    
+(10/73): less-487-5.fc27.x86_64.rpm             848 kB/s | 159 kB     00:00    
+(11/73): perl-Carp-1.42-394.fc27.noarch.rpm     192 kB/s |  28 kB     00:00    
+(12/73): perl-Exporter-5.72-395.fc27.noarch.rpm 247 kB/s |  32 kB     00:00    
+(13/73): nodejs-8.9.3-2.fc27.x86_64.rpm         1.8 MB/s | 5.5 MB     00:03    
+(14/73): perl-Time-Local-1.250-394.fc27.noarch. 187 kB/s |  30 kB     00:00    
+(15/73): perl-Pod-Usage-1.69-394.fc27.noarch.rp 253 kB/s |  33 kB     00:00    
+(16/73): perl-Scalar-List-Utils-1.48-1.fc27.x86 200 kB/s |  65 kB     00:00    
+(17/73): perl-Text-ParseWords-3.30-394.fc27.noa 129 kB/s |  16 kB     00:00    
+(18/73): perl-constant-1.33-395.fc27.noarch.rpm 189 kB/s |  24 kB     00:00    
+(19/73): perl-File-Path-2.15-1.fc27.noarch.rpm  235 kB/s |  37 kB     00:00    
+(20/73): perl-IO-1.38-401.fc27.x86_64.rpm       721 kB/s | 136 kB     00:00    
+(21/73): perl-Text-Tabs+Wrap-2013.0523-394.fc27 169 kB/s |  23 kB     00:00    
+(22/73): perl-libs-5.26.1-401.fc27.x86_64.rpm   2.3 MB/s | 1.5 MB     00:00    
+(23/73): perl-Unicode-Normalize-1.25-395.fc27.x 607 kB/s |  80 kB     00:00    
+(24/73): perl-macros-5.26.1-401.fc27.x86_64.rpm 468 kB/s |  67 kB     00:00    
+(25/73): perl-parent-0.236-394.fc27.noarch.rpm  129 kB/s |  18 kB     00:00    
+(26/73): perl-threads-2.16-4.fc27.x86_64.rpm    449 kB/s |  59 kB     00:00    
+(27/73): perl-threads-shared-1.57-4.fc27.x86_64 349 kB/s |  46 kB     00:00    
+(28/73): perl-Pod-Perldoc-3.28-395.fc27.noarch. 617 kB/s |  87 kB     00:00    
+(29/73): perl-Errno-1.28-401.fc27.x86_64.rpm    556 kB/s |  71 kB     00:00    
+(30/73): perl-interpreter-5.26.1-401.fc27.x86_6 2.9 MB/s | 6.2 MB     00:02    
+(31/73): perl-Socket-2.024-5.fc27.x86_64.rpm    278 kB/s |  56 kB     00:00    
+(32/73): perl-File-Temp-0.230.400-394.fc27.noar 367 kB/s |  61 kB     00:00    
+(33/73): perl-HTTP-Tiny-0.070-394.fc27.noarch.r 466 kB/s |  56 kB     00:00    
+(34/73): perl-MIME-Base64-3.15-395.fc27.x86_64. 228 kB/s |  29 kB     00:00    
+(35/73): perl-Pod-Escapes-1.07-394.fc27.noarch. 157 kB/s |  19 kB     00:00    
+(36/73): perl-Pod-Simple-3.35-394.fc27.noarch.r 856 kB/s | 211 kB     00:00    
+(37/73): python2-2.7.14-4.fc27.x86_64.rpm       236 kB/s | 100 kB     00:00    
+(38/73): libmpc-1.0.2-8.fc27.x86_64.rpm         467 kB/s |  56 kB     00:00    
+(39/73): perl-podlators-4.09-395.fc27.noarch.rp 706 kB/s | 115 kB     00:00    
+(40/73): perl-Term-ANSIColor-4.06-395.fc27.noar 372 kB/s |  44 kB     00:00    
+(41/73): perl-Term-Cap-1.17-394.fc27.noarch.rpm 153 kB/s |  21 kB     00:00    
+(42/73): perl-Encode-2.93-15.fc27.x86_64.rpm    2.9 MB/s | 1.5 MB     00:00    
+(43/73): perl-Storable-2.62-395.fc27.x86_64.rpm 361 kB/s |  84 kB     00:00    
+(44/73): python2-libs-2.7.14-4.fc27.x86_64.rpm  3.1 MB/s | 6.3 MB     00:02    
+(45/73): groff-base-1.22.3-12.fc27.x86_64.rpm   2.5 MB/s | 1.0 MB     00:00    
+(46/73): gcc-c++-7.2.1-2.fc27.x86_64.rpm        2.5 MB/s |  11 MB     00:04    
+(47/73): binutils-2.29-6.fc27.x86_64.rpm        2.1 MB/s | 5.9 MB     00:02    
+(48/73): isl-0.16.1-3.fc27.x86_64.rpm           1.8 MB/s | 835 kB     00:00    
+(49/73): libgomp-7.2.1-2.fc27.x86_64.rpm        920 kB/s | 198 kB     00:00    
+(50/73): libstdc++-devel-7.2.1-2.fc27.x86_64.rp 1.6 MB/s | 1.9 MB     00:01    
+(51/73): glibc-devel-2.26-21.fc27.x86_64.rpm    1.7 MB/s | 988 kB     00:00    
+(52/73): glibc-headers-2.26-21.fc27.x86_64.rpm  2.5 MB/s | 502 kB     00:00    
+(53/73): cpp-7.2.1-2.fc27.x86_64.rpm            2.6 MB/s | 9.2 MB     00:03    
+(54/73): python2-pip-9.0.1-14.fc27.noarch.rpm   2.1 MB/s | 1.8 MB     00:00    
+(55/73): python2-setuptools-37.0.0-1.fc27.noarc 1.2 MB/s | 606 kB     00:00    
+(56/73): libuv-1.16.0-1.fc27.x86_64.rpm         1.6 MB/s | 123 kB     00:00    
+(57/73): kernel-headers-4.14.11-300.fc27.x86_64 3.3 MB/s | 1.2 MB     00:00    
+(58/73): openssh-clients-7.6p1-3.fc27.x86_64.rp 3.0 MB/s | 671 kB     00:00    
+(59/73): openssh-7.6p1-3.fc27.x86_64.rpm        2.4 MB/s | 501 kB     00:00    
+(60/73): fipscheck-lib-1.5.0-3.fc27.x86_64.rpm   69 kB/s |  14 kB     00:00    
+(61/73): gcc-7.2.1-2.fc27.x86_64.rpm            2.7 MB/s |  21 MB     00:07    
+(62/73): libedit-3.1-20.20170329cvs.fc27.x86_64 277 kB/s |  99 kB     00:00    
+(63/73): fipscheck-1.5.0-3.fc27.x86_64.rpm      209 kB/s |  25 kB     00:00    
+(64/73): perl-Mozilla-CA-20160104-6.fc27.noarch 109 kB/s |  14 kB     00:00    
+(65/73): perl-IO-Socket-SSL-2.051-1.fc27.noarch 1.0 MB/s | 271 kB     00:00    
+(66/73): openssl-1.1.0g-1.fc27.x86_64.rpm       1.2 MB/s | 564 kB     00:00    
+(67/73): perl-IO-Socket-IP-0.39-4.fc27.noarch.r 226 kB/s |  45 kB     00:00    
+(68/73): perl-Net-SSLeay-1.81-4.fc27.x86_64.rpm 1.1 MB/s | 334 kB     00:00    
+(69/73): perl-URI-1.72-1.fc27.noarch.rpm        740 kB/s | 114 kB     00:00    
+(70/73): npm-5.5.1-1.8.9.3.2.fc27.x86_64.rpm    2.5 MB/s | 4.2 MB     00:01    
+(71/73): perl-libnet-3.11-1.fc27.noarch.rpm     1.7 MB/s | 119 kB     00:00    
+(72/73): perl-Data-Dumper-2.167-397.fc27.x86_64 392 kB/s |  56 kB     00:00    
+(73/73): libicu-57.1-9.fc27.x86_64.rpm          2.4 MB/s | 8.4 MB     00:03    
 --------------------------------------------------------------------------------
-Total                                           2.7 MB/s | 102 MB     00:38     
+Total                                           6.0 MB/s | 102 MB     00:17     
 Running transaction check
 Transaction check succeeded.
 Running transaction test
@@ -1064,20 +1063,20 @@ Complete!
 [0m[91m+ npm install forever -g
 [0m/usr/bin/forever -> /usr/lib/node_modules/forever/bin/forever
 [91mnpm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/forever/node_modules/fsevents):
-npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
-
+[0m[91mnpm[0m[91m WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[0m[91m
 [0m+ forever@0.15.3
-added 236 packages in 17.155s
+added 236 packages in 14.702s
 [91m+ cd react-tic-tac-toe
-+ npm install
-[0m[91mnpm WARN deprecated[0m[91m minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-[0m[91mnpm WARN deprecated[0m[91m wrench@1.5.1: wrench.js is deprecated! You should check out fs-extra (https://github.com/jprichardson/node-fs-extra) for any operations you were using wrench for. Thanks for all the usage over the years.
-[0m[91mnpm [0m[91mWARN deprecated[0m[91m graceful-fs@2.0.1: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js
-[0m[91mnpm WARN [0m[91mdeprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
-[0m[91mnpm [0m[91mWARN [0m[91mdeprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
+[0m[91m+ npm install
+[0m[91mnpm[0m[91m WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+[0m[91mnpm WARN deprecated graceful-fs@2.0.1: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js
+[0m[91mnpm [0m[91mWARN deprecated wrench@1.5.1: wrench.js is deprecated! You should check out fs-extra (https://github.com/jprichardson/node-fs-extra) for any operations you were using wrench for. Thanks for all the usage over the years.
+[0m[91mnpm [0m[91mWARN deprecated[0m[91m jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
+[0m[91mnpm WARN[0m[91m deprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
 [0m[91mnpm WARN deprecated graceful-fs@3.0.11: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js
-[0m[91mnpm [0m[91mWARN deprecated minimatch@1.0.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-[0m[91mnpm WARN deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+[0m[91mnpm[0m[91m WARN deprecated minimatch@1.0.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+[0m[91mnpm WARN [0m[91mdeprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
 [0m
 > node-sass@3.13.1 install /react-tic-tac-toe/node_modules/node-sass
 > node scripts/install.js
@@ -1085,7 +1084,7 @@ added 236 packages in 17.155s
 Downloading binary from https://github.com/sass/node-sass/releases/download/v3.13.1/linux-x64-57_binding.node
 [91mCannot download "https://github.com/sass/node-sass/releases/download/v3.13.1/linux-x64-57_binding.node": 
 
-HTTP error 404 Not Found
+HTTP error 502 Bad Gateway
 
 Hint: If github.com is not accessible in your location
       try setting a proxy via HTTP_PROXY, e.g. 
@@ -1100,217 +1099,217 @@ or configure npm proxy via
 > node scripts/build.js
 
 Building: /usr/bin/node /react-tic-tac-toe/node_modules/node-gyp/bin/node-gyp.js rebuild --verbose --libsass_ext= --libsass_cflags= --libsass_ldflags= --libsass_library=
-[91mgyp[0m[91m [0m[91minfo it worked if it ends with ok
-[0m[91mgyp[0m[91m verb [0m[91mcli [ '/usr/bin/node',
-gyp [0m[91mverb cli   '/react-tic-tac-toe/node_modules/node-gyp/bin/node-gyp.js',
-gyp verb cli   'rebuild',
+[91mgyp[0m[91m [0m[91minfo [0m[91mit worked if it ends with ok
+[0m[91mgyp[0m[91m verb cli [ '/usr/bin/node',
+[0m[91mgyp verb[0m[91m cli[0m[91m   '/react-tic-tac-toe/node_modules/node-gyp/bin/node-gyp.js',
+gyp [0m[91mverb cli[0m[91m   'rebuild',
 gyp verb cli   '--verbose',
 gyp verb cli   '--libsass_ext=',
 gyp verb cli   '--libsass_cflags=',
 gyp verb cli   '--libsass_ldflags=',
-gyp verb cli[0m[91m   '--libsass_library=' ]
-[0m[91mgyp info using node-gyp@3.6.2
-gyp info using node@8.9.3 | linux | x64
-[0m[91mgyp verb [0m[91mcommand rebuild []
-[0m[91mgyp verb [0m[91mcommand clean []
-[0m[91mgyp [0m[91mverb [0m[91mclean removing "build" directory
-[0m[91mgyp verb command[0m[91m configure []
-[0m[91mgyp verb check python[0m[91m checking for Python executable "python2" in the PATH
-[0m[91mgyp[0m[91m verb [0m[91m`which` succeeded python2 /usr/bin/python2
-[0m[91mgyp[0m[91m [0m[91mverb check python version `/usr/bin/python2 -c "import platform; print(platform.python_version());"` returned: "2.7.14\n"
-[0m[91mgyp[0m[91m verb[0m[91m get node dir no --target version specified, falling back to host node version: 8.9.3
+gyp verb cli   '--libsass_library=' ]
+gyp [0m[91minfo using node-gyp@3.6.2
+gyp [0m[91minfo using node@8.9.3 | linux | x64
+[0m[91mgyp verb command rebuild []
+[0m[91mgyp verb command clean []
+[0m[91mgyp[0m[91m [0m[91mverb clean removing "build" directory
+[0m[91mgyp [0m[91mverb command configure []
+[0m[91mgyp [0m[91mverb check python[0m[91m checking for Python executable "python2" in the PATH
+[0m[91mgyp[0m[91m verb `which` succeeded[0m[91m python2 /usr/bin/python2
+[0m[91mgyp verb check python version[0m[91m `/usr/bin/python2 -c "import platform; print(platform.python_version());"` returned: "2.7.14\n"
+[0m[91mgyp[0m[91m verb get node dir no --target version specified, falling back to host node version: 8.9.3
 [0m[91mgyp verb command install [ '8.9.3' ]
-[0m[91mgyp verb [0m[91minstall[0m[91m input version string "8.9.3"
-gyp [0m[91mverb install installing version: 8.9.3
+[0m[91mgyp [0m[91mverb[0m[91m install input version string "8.9.3"
+gyp [0m[91mverb[0m[91m install installing version: 8.9.3
 gyp verb install --ensure was passed, so won't reinstall if already installed
-[0m[91mgyp verb install[0m[91m version not already installed, continuing with install 8.9.3
-[0m[91mgyp verb [0m[91mensuring nodedir is created /root/.node-gyp/8.9.3
-[0m[91mgyp [0m[91mverb created nodedir /root/.node-gyp
-[0m[91mgyp [0m[91mhttp [0m[91mGET https://nodejs.org/download/release/v8.9.3/node-v8.9.3-headers.tar.gz
-[0m[91mgyp http [0m[91m200 https://nodejs.org/download/release/v8.9.3/node-v8.9.3-headers.tar.gz
-[0m[91mgyp[0m[91m [0m[91mverb extracted file from tarball include/node/android-ifaddrs.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/common.gypi
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/config.gypi
+[0m[91mgyp[0m[91m verb[0m[91m install version not already installed, continuing with install 8.9.3
+[0m[91mgyp[0m[91m verb ensuring nodedir is created /root/.node-gyp/8.9.3
+[0m[91mgyp[0m[91m verb created nodedir /root/.node-gyp
+[0m[91mgyp[0m[91m http GET https://nodejs.org/download/release/v8.9.3/node-v8.9.3-headers.tar.gz
+[0m[91mgyp [0m[91mhttp 200 https://nodejs.org/download/release/v8.9.3/node-v8.9.3-headers.tar.gz
+[0m[91mgyp[0m[91m verb extracted file from tarball include/node/android-ifaddrs.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/common.gypi
+[0m[91mgyp[0m[91m verb extracted file from tarball include/node/config.gypi
 [0m[91mgyp [0m[91mverb extracted file from tarball include/node/node.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/node_api.h
-[0m[91mgyp[0m[91m verb [0m[91mextracted file from tarball include/node/node_api_types.h
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/node_buffer.h
-[0m[91mgyp[0m[91m verb extracted file from tarball include/node/node_object_wrap.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/node_version.h
-[0m[91mgyp[0m[91m [0m[91mverb extracted file from tarball include/node/pthread-barrier.h
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/stdint-msvc2008.h
-[0m[91mgyp[0m[91m verb [0m[91mextracted file from tarball include/node/tree.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/uv-aix.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/uv-bsd.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball[0m[91m include/node/uv-darwin.h
-[0m[91mgyp verb extracted file from tarball[0m[91m include/node/uv-errno.h
+[0m[91mgyp verb [0m[91mextracted file from tarball include/node/node_api.h
+[0m[91mgyp[0m[91m [0m[91mverb extracted file from tarball include/node/node_api_types.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/node_buffer.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/node_object_wrap.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/node_version.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/pthread-barrier.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/stdint-msvc2008.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/tree.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/uv-aix.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/uv-bsd.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/uv-darwin.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/uv-errno.h
 [0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/uv-linux.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/uv-os390.h
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/uv-posix.h
+[0m[91mgyp[0m[91m verb [0m[91mextracted file from tarball include/node/uv-os390.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/uv-posix.h
 [0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/uv-sunos.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/uv-threadpool.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/uv-unix.h
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/uv-version.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/uv-win.h
-[0m[91mgyp[0m[91m verb extracted file from tarball include/node/uv.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/v8-debug.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/v8-inspector-protocol.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/v8-inspector.h
-[0m[91mgyp[0m[91m verb [0m[91mextracted file from tarball include/node/v8-platform.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/v8-profiler.h
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/v8-testing.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/v8-util.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/v8-value-serializer-version.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/v8-version-string.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/v8-version.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/v8.h
-[0m[91mgyp[0m[91m verb[0m[91m extracted file from tarball include/node/v8config.h
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/zconf.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/zlib.h
-[0m[91mgyp[0m[91m verb extracted file from tarball include/node/openssl/aes.h
-[0m[91mgyp[0m[91m verb extracted file from tarball include/node/openssl/asn1.h
-[0m[91mgyp[0m[91m verb extracted file from tarball include/node/openssl/asn1_mac.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/uv-threadpool.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/uv-unix.h
+[0m[91mgyp verb extracted file from tarball include/node/uv-version.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/uv-win.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/uv.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/v8-debug.h
+[0m[91mgyp verb [0m[91mextracted file from tarball include/node/v8-inspector-protocol.h
+[0m[91mgyp[0m[91m [0m[91mverb extracted file from tarball include/node/v8-inspector.h
+[0m[91mgyp[0m[91m verb[0m[91m extracted file from tarball include/node/v8-platform.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/v8-profiler.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/v8-testing.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/v8-util.h
+[0m[91mgyp verb [0m[91mextracted file from tarball[0m[91m include/node/v8-value-serializer-version.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/v8-version-string.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/v8-version.h
+[0m[91mgyp[0m[91m verb[0m[91m extracted file from tarball include/node/v8.h
+[0m[91mgyp verb[0m[91m extracted file from tarball include/node/v8config.h
+[0m[91mgyp verb [0m[91mextracted file from tarball include/node/zconf.h
+[0m[91mgyp[0m[91m verb extracted file from tarball include/node/zlib.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/aes.h
+[0m[91mgyp[0m[91m [0m[91mverb extracted file from tarball include/node/openssl/asn1.h
+[0m[91mgyp verb [0m[91mextracted file from tarball[0m[91m include/node/openssl/asn1_mac.h
 [0m[91mgyp verb [0m[91mextracted file from tarball include/node/openssl/asn1t.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/bio.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/blowfish.h
-[0m[91mgyp[0m[91m [0m[91mverb extracted file from tarball include/node/openssl/bn.h
-[0m[91mgyp[0m[91m verb extracted file from tarball include/node/openssl/buffer.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/camellia.h
-[0m[91mgyp[0m[91m verb extracted file from tarball include/node/openssl/cast.h
-[0m[91mgyp[0m[91m verb [0m[91mextracted file from tarball include/node/openssl/cmac.h
-[0m[91mgyp[0m[91m verb extracted file from tarball include/node/openssl/cms.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/comp.h
+[0m[91mgyp verb [0m[91mextracted file from tarball[0m[91m include/node/openssl/bio.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/blowfish.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/bn.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/buffer.h
+[0m[91mgyp[0m[91m verb extracted file from tarball include/node/openssl/camellia.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/cast.h
+[0m[91mgyp[0m[91m verb extracted file from tarball include/node/openssl/cmac.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/cms.h
+[0m[91mgyp verb [0m[91mextracted file from tarball[0m[91m include/node/openssl/comp.h
 [0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/conf.h
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/conf_api.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/crypto.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/conf_api.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/crypto.h
 [0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/des.h
 [0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/des_old.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/dh.h
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/dsa.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/dso.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/dtls1.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/e_os2.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/ebcdic.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/ec.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/ecdh.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/ecdsa.h
-[0m[91mgyp verb [0m[91mextracted file from tarball include/node/openssl/engine.h
+[0m[91mgyp verb[0m[91m [0m[91mextracted file from tarball include/node/openssl/dh.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/dsa.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/dso.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/dtls1.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/e_os2.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/ebcdic.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/ec.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/ecdh.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/ecdsa.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/engine.h
 [0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/err.h
-[0m[91mgyp verb[0m[91m extracted file from tarball[0m[91m include/node/openssl/evp.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/hmac.h
-[0m[91mgyp[0m[91m verb[0m[91m extracted file from tarball include/node/openssl/idea.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/krb5_asn.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/kssl.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/lhash.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/md4.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/md5.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/mdc2.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/modes.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/obj_mac.h
+[0m[91mgyp[0m[91m verb[0m[91m extracted file from tarball include/node/openssl/evp.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/hmac.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/idea.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/krb5_asn.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/kssl.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/lhash.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/md4.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/md5.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/mdc2.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/modes.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/obj_mac.h
 [0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/objects.h
 [0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/ocsp.h
-[0m[91mgyp[0m[91m verb extracted file from tarball include/node/openssl/opensslconf.h
-[0m[91mgyp [0m[91mverb [0m[91mcontent checksum node-v8.9.3-headers.tar.gz f8a5add5cc635ac6981a52ac777d9e7ff03c072078f2ec1f33e099e9f57e3fca
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/opensslconf.h
 [0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/opensslv.h
 [0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/ossl_typ.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/pem.h
-[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/pem2.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/pkcs12.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/pkcs7.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/pqueue.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/rand.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/rc2.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/rc4.h
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball[0m[91m include/node/openssl/ripemd.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/rsa.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/safestack.h
-[0m[91mgyp verb[0m[91m extracted file from tarball include/node/openssl/seed.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/sha.h
-[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/srp.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/srtp.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/pem.h
+[0m[91mgyp verb content checksum[0m[91m node-v8.9.3-headers.tar.gz f8a5add5cc635ac6981a52ac777d9e7ff03c072078f2ec1f33e099e9f57e3fca
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/pem2.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/pkcs12.h
+[0m[91mgyp verb[0m[91m extracted file from tarball include/node/openssl/pkcs7.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/pqueue.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/rand.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/rc2.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/rc4.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/ripemd.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/rsa.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/safestack.h
+[0m[91mgyp[0m[91m verb extracted file from tarball include/node/openssl/seed.h
+[0m[91mgyp verb[0m[91m extracted file from tarball include/node/openssl/sha.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/srp.h
+[0m[91mgyp verb extracted file from tarball include/node/openssl/srtp.h
 [0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/ssl.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/ssl2.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/ssl23.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/ssl3.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/stack.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/symhacks.h
+[0m[91mgyp verb extracted file from tarball include/node/openssl/ssl2.h
+[0m[91mgyp verb[0m[91m [0m[91mextracted file from tarball include/node/openssl/ssl23.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/ssl3.h
+[0m[91mgyp verb[0m[91m extracted file from tarball include/node/openssl/stack.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/symhacks.h
 [0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/tls1.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/ts.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/txt_db.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/ui.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball include/node/openssl/ui_compat.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball[0m[91m include/node/openssl/whrlpool.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball include/node/openssl/x509.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/x509_vfy.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/x509v3.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/archs/VC-WIN64A/opensslconf.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/archs/VC-WIN32/opensslconf.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/archs/solaris64-x86_64-gcc/opensslconf.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/archs/solaris-x86-gcc/opensslconf.h
-[0m[91mgyp verb[0m[91m [0m[91mextracted file from tarball include/node/openssl/archs/linux64-s390x/opensslconf.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/archs/linux32-s390x/opensslconf.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/ts.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/txt_db.h
+[0m[91mgyp verb [0m[91mextracted file from tarball include/node/openssl/ui.h
+[0m[91mgyp verb[0m[91m extracted file from tarball include/node/openssl/ui_compat.h
+[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/whrlpool.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/x509.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/x509_vfy.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/x509v3.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/archs/VC-WIN64A/opensslconf.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/archs/VC-WIN32/opensslconf.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/archs/solaris64-x86_64-gcc/opensslconf.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/archs/solaris-x86-gcc/opensslconf.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/archs/linux64-s390x/opensslconf.h
+[0m[91mgyp [0m[91mverb [0m[91mextracted file from tarball include/node/openssl/archs/linux32-s390x/opensslconf.h
 [0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/archs/linux-x86_64/opensslconf.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/archs/linux-x32/opensslconf.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/archs/linux-ppc64/opensslconf.h
-[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/openssl/archs/linux-ppc/opensslconf.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball include/node/openssl/archs/linux-elf/opensslconf.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball[0m[91m include/node/openssl/archs/linux-armv4/opensslconf.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/archs/linux-aarch64/opensslconf.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/archs/darwin64-x86_64-cc/opensslconf.h
-[0m[91mgyp [0m[91mverb[0m[91m [0m[91mextracted file from tarball include/node/openssl/archs/darwin-i386-cc/opensslconf.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/archs/BSD-x86_64/opensslconf.h
-[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/archs/BSD-x86/opensslconf.h
-[0m[91mgyp verb[0m[91m extracted file from tarball include/node/openssl/archs/aix64-gcc/opensslconf.h
-[0m[91mgyp [0m[91mverb[0m[91m extracted file from tarball include/node/openssl/archs/aix-gcc/opensslconf.h
-[0m[91mgyp verb extracted file from tarball[0m[91m include/node/libplatform/libplatform-export.h
-[0m[91mgyp verb extracted file from tarball include/node/libplatform/libplatform.h
-[0m[91mgyp verb [0m[91mextracted file from tarball include/node/libplatform/v8-tracing.h
-[0m[91mgyp verb [0m[91mtarball done parsing tarball
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/archs/linux-x32/opensslconf.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/archs/linux-ppc64/opensslconf.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/archs/linux-ppc/opensslconf.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/openssl/archs/linux-elf/opensslconf.h
+[0m[91mgyp[0m[91m verb[0m[91m extracted file from tarball include/node/openssl/archs/linux-armv4/opensslconf.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/archs/linux-aarch64/opensslconf.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/archs/darwin64-x86_64-cc/opensslconf.h
+[0m[91mgyp verb extracted file from tarball include/node/openssl/archs/darwin-i386-cc/opensslconf.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/archs/BSD-x86_64/opensslconf.h
+[0m[91mgyp verb extracted file from tarball include/node/openssl/archs/BSD-x86/opensslconf.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/openssl/archs/aix64-gcc/opensslconf.h
+[0m[91mgyp verb extracted file from tarball include/node/openssl/archs/aix-gcc/opensslconf.h
+[0m[91mgyp [0m[91mverb extracted file from tarball include/node/libplatform/libplatform-export.h
+[0m[91mgyp verb extracted file from tarball[0m[91m include/node/libplatform/libplatform.h
+[0m[91mgyp [0m[91mverb extracted file from tarball[0m[91m include/node/libplatform/v8-tracing.h
+[0m[91mgyp [0m[91mverb tarball done parsing tarball
 [0m[91mgyp [0m[91mverb check download content checksum, need to download `SHASUMS256.txt`... 
 gyp verb [0m[91mchecksum url https://nodejs.org/download/release/v8.9.3/SHASUMS256.txt
-[0m[91mgyp[0m[91m http [0m[91mGET https://nodejs.org/download/release/v8.9.3/SHASUMS256.txt
-[0m[91mgyp http 200[0m[91m https://nodejs.org/download/release/v8.9.3/SHASUMS256.txt
+gyp http GET https://nodejs.org/download/release/v8.9.3/SHASUMS256.txt
+[0m[91mgyp http[0m[91m 200 https://nodejs.org/download/release/v8.9.3/SHASUMS256.txt
 [0m[91mgyp [0m[91mverb checksum data[0m[91m {"node-v8.9.3-aix-ppc64.tar.gz":"92e662ae3e7fa84a304a4be2e547a38d4f4dc421201a44a5f833683278484198","node-v8.9.3-darwin-x64.tar.gz":"fa7962f25db420a374e9e60d8a410188bd690a2f0ce8d403aa9b09d9b7ae8c1f","node-v8.9.3-darwin-x64.tar.xz":"ff2a425e6c87cd51be6935fe7e3cf3979f9dd53fc7307b66b74358822780ab05","node-v8.9.3-headers.tar.gz":"f8a5add5cc635ac6981a52ac777d9e7ff03c072078f2ec1f33e099e9f57e3fca","node-v8.9.3-headers.tar.xz":"c0aa9ccfc9445b912367e695285cab6d153904c75a67b9cf7ce1b5fc8620ba99","node-v8.9.3-linux-arm64.tar.gz":"df32e87060f5426fc6c6b1af8e3e130ae08ee36f570ac3728442c7833e53d7c3","node-v8.9.3-linux-arm64.tar.xz":"8860678ad0c24059380af254574e5a12371a2d5c92ca5e1ac7267314af7df04f","node-v8.9.3-linux-armv6l.tar.gz":"c1303857ab808dfd72de748e359ef767df6411404f57d05805ca9bfffd0ab3a8","node-v8.9.3-linux-armv6l.tar.xz":"b3b588de37e4a6e227b540b3f85eac37fe7fd6e78ee92be9556eb17077f734ed","node-v8.9.3-linux-armv7l.tar.gz":"4288690edfb0ec8f20f34cbcb24580fad227b9323589a3f437d8fc474b19677d","node-v8.9.3-linux-armv7l.tar.xz":"4ca2b9a5b46c22353233365944c2df7f1566a298bf25f57be8c863bf1bd4e0f8","node-v8.9.3-linux-ppc64le.tar.gz":"0ddb29995a279c3ce630aee38dc5a5745e99283d440a9381e8ca209ccb860352","node-v8.9.3-linux-ppc64le.tar.xz":"a5568b0098096db65c50c7968206c6cab4ea67f069e1a8627e18f33cec188095","node-v8.9.3-linux-s390x.tar.gz":"020839f4dfd462ce7cc97e01c228e751511bc503387a094f580df1ef85cbf680","node-v8.9.3-linux-s390x.tar.xz":"ca854e0f21bfbc86182134a1dc6197cf09ad4a5e0f640923d51674cc36aad9e2","node-v8.9.3-linux-x64.tar.gz":"df3f1480dddb27ba5ca72bcaae48cb1a4446f341648c87338979fff35eb9fb27","node-v8.9.3-linux-x64.tar.xz":"86f3aa593315f0503d069e3f4805019583ab8d86c0244a83c795d1942e3f99b7","node-v8.9.3-linux-x86.tar.gz":"2414b66425fb79d60f2ec6ba054de17b5253c1ee00fc25e491f8f02dbaae03a8","node-v8.9.3-linux-x86.tar.xz":"04dbc27bfd4ef06a0b364f4c15ab28268f90bf1310d8035481106397c108f600","node-v8.9.3.pkg":"05b95b18cd170cbf397b83f9cf098c7132a816354b45a9db8454347215df91fb","node-v8.9.3-sunos-x64.tar.gz":"2159b641ed66fa9a20fa0092575d14f7175898704b66d4406583da6b52db7cae","node-v8.9.3-sunos-x64.tar.xz":"67bb2c6231fe621812caac11ee7c0b08be7260f8f00572a4a24f1d8f89f345aa","node-v8.9.3-sunos-x86.tar.gz":"19fbec782aad6524f6417e44d2ddc176b1aaa16f5a9ccd6586b543f2428c8ae3","node-v8.9.3-sunos-x86.tar.xz":"0a300d8875e7fcbefb082e3ff79b62a39b63ed348a632d074315a18f1108ad4e","node-v8.9.3.tar.gz":"9efec12ae408f4e92738d9e5ab3c3fe68a407b7830228b0548ce9eef54cf63f9","node-v8.9.3.tar.xz":"748ddb3baa6b85e6a56e38aacd066586e7581952f84a92bc8152248a9be6b2da","node-v8.9.3-win-x64.7z":"d67bea0d8e27e66b55bdc32de600a11611e73b3a2322401a487513e56304559c","node-v8.9.3-win-x64.zip":"17dee0c06d088269123a27db3905a39a17a51cc0ea65435ae942c718f0f94403","node-v8.9.3-win-x86.7z":"e23102d8555eace48b9976a490f3a5b702a74eff7184cdd99b7dc2e1b8d22fcb","node-v8.9.3-win-x86.zip":"c85bfc5443b9e9265493b286029ad0edda5b2aeed2abd6d314703fd21d5fd82a","node-v8.9.3-x64.msi":"68cdd5a021101a208d830da016eebb3a9de5ba75e76d8d8d6e9332038f10f56a","node-v8.9.3-x86.msi":"5f8e0e01879f273751dd1d0da7de44b4f32e65f62b5d3c373f54abd8c6db3f5a","win-x64/node.exe":"c8231cd0fa8be30891fabf53092c2916d1cac024a7ae425b9082d3d13251d3b2","win-x64/node.lib":"1cefa86f4992cd65af19c86113fe9fcd034f67ddcb85dc17fe8a10720b76480e","win-x64/node_pdb.7z":"a4bf203e3f1516020a913b560a468ad77796f8d2c2ae3e9f1884ca4312ee0d39","win-x64/node_pdb.zip":"af14e1458134a9d4b37e66b0fea635b827e603694368f1feed4ff35a1f010867","win-x86/node.exe":"2cd11403c9976e45be4f7f4785b96b0cb8126d7dd87dee8b1f1fe9fa680126f1","win-x86/node.lib":"f2f21617e46cbb2e899d012774fdeed5cba4057b6829f231f429b28f07f1a86a","win-x86/node_pdb.7z":"f9a60e58680f720e4ca63833aa500586d4cc6366763a727b80f3f3153eeb1e7f","win-x86/node_pdb.zip":"834f09cc6c78ebf8b0d210aa55a4fdbecaab0f30a12f8b467a2de04b5db0d78b"}
-[0m[91mgyp verb download contents checksum {"node-v8.9.3-headers.tar.gz":"f8a5add5cc635ac6981a52ac777d9e7ff03c072078f2ec1f33e099e9f57e3fca"}
-gyp verb validating download checksum for node-v8.9.3-headers.tar.gz (f8a5add5cc635ac6981a52ac777d9e7ff03c072078f2ec1f33e099e9f57e3fca == f8a5add5cc635ac6981a52ac777d9e7ff03c072078f2ec1f33e099e9f57e3fca)
+gyp verb download contents checksum {"node-v8.9.3-headers.tar.gz":"f8a5add5cc635ac6981a52ac777d9e7ff03c072078f2ec1f33e099e9f57e3fca"}
+gyp [0m[91mverb validating download checksum for node-v8.9.3-headers.tar.gz (f8a5add5cc635ac6981a52ac777d9e7ff03c072078f2ec1f33e099e9f57e3fca == f8a5add5cc635ac6981a52ac777d9e7ff03c072078f2ec1f33e099e9f57e3fca)
 [0m[91mgyp verb get node dir target node version installed: 8.9.3
-[0m[91mgyp verb build dir[0m[91m attempting to create "build" dir: /react-tic-tac-toe/node_modules/node-sass/build
+gyp [0m[91mverb build dir attempting to create "build" dir: /react-tic-tac-toe/node_modules/node-sass/build
 [0m[91mgyp verb build dir "build" dir needed to be created? /react-tic-tac-toe/node_modules/node-sass/build
-[0m[91mgyp verb[0m[91m [0m[91mbuild/config.gypi creating config file
-[0m[91mgyp [0m[91mverb build/config.gypi writing out config file: /react-tic-tac-toe/node_modules/node-sass/build/config.gypi
-[0m[91mgyp [0m[91mverb config.gypi checking for gypi file: /react-tic-tac-toe/node_modules/node-sass/config.gypi
+gyp verb build/config.gypi creating config file
+[0m[91mgyp verb[0m[91m build/config.gypi writing out config file: /react-tic-tac-toe/node_modules/node-sass/build/config.gypi
+[0m[91mgyp [0m[91mverb config.gypi[0m[91m checking for gypi file: /react-tic-tac-toe/node_modules/node-sass/config.gypi
 [0m[91mgyp verb common.gypi checking for gypi file: /react-tic-tac-toe/node_modules/node-sass/common.gypi
-[0m[91mgyp verb[0m[91m gyp[0m[91m gyp format was not specified; forcing "make"
-[0m[91mgyp[0m[91m info spawn /usr/bin/python2
-[0m[91mgyp info spawn args [ '/react-tic-tac-toe/node_modules/node-gyp/gyp/gyp_main.py',
+[0m[91mgyp [0m[91mverb [0m[91mgyp gyp format was not specified; forcing "make"
+[0m[91mgyp[0m[91m [0m[91minfo spawn /usr/bin/python2
+[0m[91mgyp info[0m[91m spawn args[0m[91m [ '/react-tic-tac-toe/node_modules/node-gyp/gyp/gyp_main.py',
 gyp info spawn args   'binding.gyp',
-gyp info[0m[91m spawn args   '-f',
-gyp info spawn args   'make',
-gyp info [0m[91mspawn args   '-I',
-gyp info spawn args   '/react-tic-tac-toe/node_modules/node-sass/build/config.gypi',
-gyp info spawn args   '-I',
+gyp info spawn args   '-f',
+gyp [0m[91minfo spawn args   'make',
+[0m[91mgyp info spawn args   '-I',
+gyp [0m[91minfo spawn args   '/react-tic-tac-toe/node_modules/node-sass/build/config.gypi',
+gyp info spawn args[0m[91m   '-I',
 gyp info spawn args[0m[91m   '/react-tic-tac-toe/node_modules/node-gyp/addon.gypi',
 gyp info spawn args   '-I',
 gyp info spawn args   '/root/.node-gyp/8.9.3/include/node/common.gypi',
-gyp info spawn args   '-Dlibrary=shared_library',
-gyp info spawn args   '-Dvisibility=default',
-gyp [0m[91minfo spawn args   '-Dnode_root_dir=/root/.node-gyp/8.9.3',
-gyp info spawn args   '-Dnode_gyp_dir=/react-tic-tac-toe/node_modules/node-gyp',
-gyp info spawn args   '-Dnode_lib_file=/root/.node-gyp/8.9.3/<(target_arch)/node.lib',
-gyp info spawn args   '-Dmodule_root_dir=/react-tic-tac-toe/node_modules/node-sass',
-gyp info spawn args   '-Dnode_engine=v8',
-[0m[91mgyp info spawn args   '--depth=.',
-gyp info spawn args   '--no-parallel',
-gyp info spawn args   '--generator-output',
-gyp info spawn args   'build',
-gyp info spawn args   '-Goutput_dir=.' ]
-[0m[91mgyp[0m[91m verb[0m[91m command build []
-[0m[91mgyp[0m[91m verb build type Release
+gyp info[0m[91m spawn args   '-Dlibrary=shared_library',
+gyp[0m[91m info spawn args[0m[91m   '-Dvisibility=default',
+gyp info[0m[91m spawn args   '-Dnode_root_dir=/root/.node-gyp/8.9.3',
+gyp[0m[91m info spawn args[0m[91m   '-Dnode_gyp_dir=/react-tic-tac-toe/node_modules/node-gyp',
+gyp [0m[91minfo spawn args   '-Dnode_lib_file=/root/.node-gyp/8.9.3/<(target_arch)/node.lib',
+[0m[91mgyp info [0m[91mspawn args   '-Dmodule_root_dir=/react-tic-tac-toe/node_modules/node-sass',
+gyp [0m[91minfo spawn args   '-Dnode_engine=v8',
+[0m[91mgyp info [0m[91mspawn args   '--depth=.',
+gyp [0m[91minfo spawn args   '--no-parallel',
+[0m[91mgyp info [0m[91mspawn args   '--generator-output',
+gyp[0m[91m info spawn args[0m[91m   'build',
+gyp info [0m[91mspawn args   '-Goutput_dir=.' ]
+[0m[91mgyp [0m[91mverb command build []
+[0m[91mgyp[0m[91m [0m[91mverb build type[0m[91m Release
 [0m[91mgyp verb architecture x64
-gyp verb [0m[91mnode dev dir /root/.node-gyp/8.9.3
-[0m[91mgyp verb `which` succeeded for `make` /usr/bin/make
-[0m[91mgyp [0m[91minfo spawn[0m[91m make
-[0m[91mgyp[0m[91m info spawn args [ 'V=1', 'BUILDTYPE=Release', '-C', 'build' ]
+gyp [0m[91mverb node dev dir /root/.node-gyp/8.9.3
+[0m[91mgyp[0m[91m verb `which` succeeded for `make` /usr/bin/make
+[0m[91mgyp[0m[91m info spawn make
+[0m[91mgyp info spawn args [ 'V=1', 'BUILDTYPE=Release', '-C', 'build' ]
 [0mmake: Entering directory '/react-tic-tac-toe/node_modules/node-sass/build'
   g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.3.6"' -I/root/.node-gyp/8.9.3/include/node -I/root/.node-gyp/8.9.3/src -I/root/.node-gyp/8.9.3/deps/uv/include -I/root/.node-gyp/8.9.3/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/ast.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/ast.o ../src/libsass/src/ast.cpp
   g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.3.6"' -I/root/.node-gyp/8.9.3/include/node -I/root/.node-gyp/8.9.3/src -I/root/.node-gyp/8.9.3/deps/uv/include -I/root/.node-gyp/8.9.3/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/base64vlq.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/base64vlq.o ../src/libsass/src/base64vlq.cpp
@@ -1323,7 +1322,7 @@ gyp verb [0m[91mnode dev dir /root/.node-gyp/8.9.3
 ../src/libsass/src/cencode.c:49:2: note: here
   case step_B:
   ^~~~
-[0m[91m../src/libsass/src/cencode.c:59:11: warning: this statement may fall through [-Wimplicit-fallthrough=]
+../src/libsass/src/cencode.c:59:11: warning: this statement may fall through [-Wimplicit-fallthrough=]
     result = (fragment & 0x00f) << 2;
     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/libsass/src/cencode.c:60:2: note: here
@@ -1392,29 +1391,29 @@ gyp verb [0m[91mnode dev dir /root/.node-gyp/8.9.3
   g++ -shared -pthread -rdynamic -m64  -Wl,-soname=binding.node -o Release/obj.target/binding.node -Wl,--start-group Release/obj.target/binding/src/binding.o Release/obj.target/binding/src/create_string.o Release/obj.target/binding/src/custom_function_bridge.o Release/obj.target/binding/src/custom_importer_bridge.o Release/obj.target/binding/src/sass_context_wrapper.o Release/obj.target/binding/src/sass_types/boolean.o Release/obj.target/binding/src/sass_types/color.o Release/obj.target/binding/src/sass_types/error.o Release/obj.target/binding/src/sass_types/factory.o Release/obj.target/binding/src/sass_types/list.o Release/obj.target/binding/src/sass_types/map.o Release/obj.target/binding/src/sass_types/null.o Release/obj.target/binding/src/sass_types/number.o Release/obj.target/binding/src/sass_types/string.o Release/obj.target/src/sass.a -Wl,--end-group 
   rm -rf "Release/binding.node" && cp -af "Release/obj.target/binding.node" "Release/binding.node"
 make: Leaving directory '/react-tic-tac-toe/node_modules/node-sass/build'
-[91mgyp [0m[91minfo ok 
+[91mgyp info ok[0m[91m 
 [0mInstalled to /react-tic-tac-toe/node_modules/node-sass/vendor/linux-x64-57/binding.node
 [91mnpm[0m[91m notice created a lockfile as package-lock.json. You should commit this file.
-[0m[91mnpm[0m[91m [0m[91mWARN optional[0m[91m SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/fsevents):
-npm[0m[91m WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
-
-[0madded 917 packages in 152.214s
+[0m[91mnpm[0m[91m WARN optional[0m[91m SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/fsevents):
+npm WARN notsup[0m[91m SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[0m[91m
+[0madded 917 packages in 157.727s
 [91m+ sed -i.tmp 's:if(this.disableHostCheck) return true:return true:' /react-tic-tac-toe/node_modules/webpack-dev-server/lib/Server.js
 [0m[91m+ dnf clean all
 [0m18 files removed
 [91m+ exit
-[0m ---> f3f0ca288e5d
-Removing intermediate container 34ed83a8d3f4
-Step 7 : WORKDIR /react-tic-tac-toe
- ---> Running in a3e7891d4d69
- ---> 62a9c8afa371
-Removing intermediate container a3e7891d4d69
-Step 8 : EXPOSE 8080 8888
- ---> Running in fbf57c56f7d8
- ---> 93464d7cfb19
-Removing intermediate container fbf57c56f7d8
-Step 9 : CMD /start.sh
- ---> Running in 8eaa8b5ea0d0
- ---> 046f422e5857
-Removing intermediate container 8eaa8b5ea0d0
-Successfully built 046f422e5857
+[0m ---> 94ee39238b3a
+Removing intermediate container 4d06c25ca3f6
+Step 6 : WORKDIR /react-tic-tac-toe
+ ---> Running in 8c4c7221932c
+ ---> 8cb294055359
+Removing intermediate container 8c4c7221932c
+Step 7 : EXPOSE 8080
+ ---> Running in 2ae98d18ec5e
+ ---> d5de922f2a8b
+Removing intermediate container 2ae98d18ec5e
+Step 8 : ENTRYPOINT npm start
+ ---> Running in ffe7375a1d1f
+ ---> 973fe5a17f12
+Removing intermediate container ffe7375a1d1f
+Successfully built 973fe5a17f12
